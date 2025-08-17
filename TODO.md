@@ -1,0 +1,5 @@
+- [ ] Repo Aufräumen
+- [ ] Add Training/Attack animation to Work mode (as long timer runs)
+- [ ] Add Break mode (as short timer runs)
+- [ ] Add rest/sleep/eat animation to Break mode (as long timer runs)
+- [ ] Add Background art to each mode

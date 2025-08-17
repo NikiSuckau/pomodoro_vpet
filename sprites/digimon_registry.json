@@ -1,0 +1,48 @@
+{
+  "available_digimon": [
+    {
+      "name": "Agumon",
+      "directory": "Agumon_penc",
+      "imported_date": "2025-08-15",
+      "default": true
+    },
+    {
+      "name": "Mokumon",
+      "directory": "Mokumon_penc",
+      "imported_date": "2025-08-15",
+      "default": false
+    },
+    {
+      "name": "DemiMeramon",
+      "directory": "DemiMeramon_penc",
+      "imported_date": "2025-08-16",
+      "default": false
+    },
+    {
+      "name": "Ghostmon",
+      "directory": "Ghostmon_penc",
+      "imported_date": "2025-08-16",
+      "default": false
+    },
+    {
+      "name": "Wizardmon",
+      "directory": "Wizardmon_penc",
+      "imported_date": "2025-08-16",
+      "default": false
+    },
+    {
+      "name": "Baalmon",
+      "directory": "Baalmon_penc",
+      "imported_date": "2025-08-16",
+      "default": false
+    },
+    {
+      "name": "Beelzemon (2010 Anime Version)",
+      "directory": "Beelzemon (2010 Anime Version)_penc",
+      "imported_date": "2025-08-16",
+      "default": false
+    }
+  ],
+  "last_updated": "2025-08-16T14:14:26.130133",
+  "format_version": "1.0"
+}
