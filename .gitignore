@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+pytest_cache/
+*.log
+data/work_sessions.json

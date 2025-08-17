@@ -20,15 +20,17 @@ A unique Pomodoro timer application with an integrated virtual pet (VPet) compan
 The application follows object-oriented principles with clear separation of concerns:
 
 ```
-├── backend/                 # Business logic layer
+├── app/                    # Application controller package
+│   └── main_window.py      # Coordinates backend and frontend components
+├── backend/                # Business logic layer
 │   ├── pomodoro_engine.py  # Core timer logic and state management
+│   ├── time_logger.py      # Work session tracking
 │   └── vpet_engine.py      # VPet behavior and sprite management
 ├── frontend/               # GUI layer
 │   ├── pomodoro_gui.py     # Timer display and controls
 │   └── vpet_gui.py         # VPet canvas and rendering
-├── main_app.py             # Application controller and coordination
 ├── pomodoro_vpet.py        # Main entry point
-└── pomodoro_timer.py       # Legacy monolithic version (for reference)
+└── tests/                  # Automated tests
 ```
 
 ### Component Responsibilities
@@ -63,14 +65,6 @@ Ensure your virtual environment is activated, then run the application:
 python pomodoro_vpet.py
 ```
 
-### Legacy Version
-
-The original monolithic version is still available:
-
-```bash
-python legacy/pomodoro_timer.py
-```
-
 ### Controls
 
 - **Start**: Begin the timer
@@ -90,7 +84,7 @@ python legacy/pomodoro_timer.py
 
 ## Customization
 
-You can easily modify the timer durations by editing these variables in `pomodoro_timer.py`:
+You can easily modify the timer durations by editing these variables in `backend/pomodoro_engine.py`:
 
 ```python
 self.work_duration = 25 * 60  # 25 minutes in seconds
@@ -99,10 +93,10 @@ self.break_duration = 5 * 60  # 5 minutes in seconds
 
 ## Testing
 
-Run the test script to verify everything is working:
+Run the automated test suite to verify everything is working:
 
 ```bash
-python test_pomodoro.py
+pytest
 ```
 
 ## License
