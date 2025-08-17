@@ -1,32 +1,3 @@
-# Core dependencies for enhanced Pomodoro VPet Timer
-Pillow>=9.0.0              # Image processing for sprite manipulation
-pygame>=2.1.0              # Better graphics and sound support (optional alternative to tkinter)
-playsound>=1.3.0           # Sound effects for timer notifications
-pydub>=0.25.1              # Audio file manipulation
-requests>=2.28.0           # For potential future features (weather, quotes, etc)
-colorama>=0.4.4            # Colored terminal output for debugging
-click>=8.0.0               # CLI interface enhancements
-python-dotenv>=0.19.0      # Environment variable management
-PyYAML>=6.0                # Configuration file support
-psutil>=5.9.0              # System monitoring (CPU, memory for adaptive behavior)
-schedule>=1.2.0            # Advanced scheduling features
-notify2>=0.3.1             # Desktop notifications (Linux/Unix)
-plyer>=2.1.0               # Cross-platform notifications
-appdirs>=1.4.4             # Proper app data directory handling
-rich>=12.0.0               # Beautiful terminal output and logging
-loguru>=0.6.0              # Advanced logging
-typer>=0.7.0               # Modern CLI framework (alternative to click)
-pydantic>=1.10.0           # Data validation and settings management
-
-# Development and testing
-pytest>=7.0.0              # Testing framework
-pytest-cov>=4.0.0          # Coverage testing
-black>=22.0.0              # Code formatting
-flake8>=5.0.0              # Linting
-mypy>=0.991                # Type checking
-pre-commit>=2.20.0         # Git hooks for code quality
-
-# Optional GUI enhancements (if moving beyond tkinter)
-customtkinter>=5.0.0       # Modern tkinter alternative
-tkinter-tooltip>=2.0.0     # Enhanced tooltips
-
+# Minimal dependencies for Pomodoro VPet Timer
+Pillow>=9.0.0  # Image manipulation for VPet sprites (optional)
+pytest>=7.0.0  # Testing framework
