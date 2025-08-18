@@ -69,10 +69,11 @@ class VPetEngine:
         self.canvas_width = 230
         self.canvas_height = 60
         self.sprite_width = 48
+        self.sprite_height = 48
         self.margin = 12
         # Projectile state
         self.projectiles: list[dict] = []
-        self.projectile_speed = 8
+        self.projectile_speed = 12
         self.projectile_width = 20
 
         # Walking animation frames (facing left by default)
@@ -385,7 +386,7 @@ class VPetEngine:
 
     def launch_projectile(self) -> None:
         """Spawn a new projectile in front of the pet."""
-        y_pos = self.canvas_height // 2
+        y_pos = self.canvas_height // 2 - self.sprite_height // 4
         if self.direction == 1:  # moving right
             start_x = self.x_position + self.sprite_width
             sprite_key = "fireball_flipped"

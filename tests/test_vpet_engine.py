@@ -31,6 +31,8 @@ def test_attack_launches_projectile():
     for _ in range(attack_event.frame_delay + 1):
         attack_event.update(engine)
     assert len(engine.projectiles) == 1
+    # Projectile should spawn from mid-body height
+    assert engine.projectiles[0]["y"] == engine.canvas_height // 2 - engine.sprite_height // 4
     # Update projectiles until they vanish
     for _ in range(10):
         engine._update_projectiles()
