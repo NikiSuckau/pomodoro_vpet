@@ -275,7 +275,12 @@ class MainWindow:
                     proj.get("sprite_key", "")
                 )
                 projectile_sprites.append(
-                    (proj.get("x", 0), proj.get("y", 0), psprite_data, proj.get("sprite_key", ""))
+                    (
+                        proj.get("x", 0),
+                        proj.get("y", 0),
+                        psprite_data,
+                        proj.get("sprite_key", ""),
+                    )
                 )
 
             # Update VPet display
@@ -337,13 +342,31 @@ class MainWindow:
 
     def _on_import_clicked(self) -> None:
         """Handle import button click from Pomodoro GUI."""
-        from tkinter import filedialog, messagebox
+        from tkinter import filedialog, messagebox, Toplevel
 
-        # Open file dialog for zip files
+        # Create a hidden dummy window just below the main window to act as parent
+        self.root.update_idletasks()
+        root_x = self.root.winfo_rootx()
+        root_y = self.root.winfo_rooty()
+        root_w = self.root.winfo_width()
+        root_h = self.root.winfo_height()
+        dummy = Toplevel(self.root)
+        dummy.withdraw()  # Hide the dummy window
+        # Place dummy window just below the main window
+        dialog_w = 600  # Typical dialog width
+        x = root_x + (root_w - dialog_w) // 2
+        y = root_y + root_h + 10
+        if x < 0:
+            x = 0
+        dummy.geometry(f"{dialog_w}x100+{x}+{y}")
+        dummy.update_idletasks()
+        # Open file dialog for zip files, using dummy as parent
         zip_file = filedialog.askopenfilename(
             title="Select Digimon Sprite Pack",
             filetypes=[("Zip files", "*.zip"), ("All files", "*.*")],
+            parent=dummy,
         )
+        dummy.destroy()
 
         if not zip_file:
             return  # User cancelled
@@ -352,12 +375,12 @@ class MainWindow:
         success, message = self.digimon_importer.import_digimon(zip_file)
 
         if success:
-            messagebox.showinfo("Import Successful", message)
+            messagebox.showinfo("Import Successful", message, parent=self.root)
             # Update the Digimon list in GUI
             self._update_digimon_list()
             logger.info(f"Successfully imported Digimon from {zip_file}")
         else:
-            messagebox.showerror("Import Failed", message)
+            messagebox.showerror("Import Failed", message, parent=self.root)
             logger.error(f"Failed to import Digimon from {zip_file}: {message}")
 
     def _on_digimon_changed(self, selected_digimon: str) -> None:

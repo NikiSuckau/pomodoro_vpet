@@ -376,8 +376,8 @@ class VPetEngine:
 
     def launch_projectile(self) -> None:
         """Spawn a new projectile in front of the pet at mid-body height."""
-        y_pos = self.canvas_height // 2 - self.sprite_height // 4
-        overlap = self.sprite_width * 0.2  # Calculate 20% overlap
+        y_pos = self.canvas_height - self.sprite_height // 2
+        overlap = self.sprite_width * 0.3  # Calculate 30% overlap
 
         if self.direction == 1:  # moving right
             start_x = self.x_position + self.sprite_width - overlap
