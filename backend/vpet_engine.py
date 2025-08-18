@@ -401,11 +401,18 @@ class VPetEngine:
         }
         self.projectiles.append(projectile)
 
-    def _update_projectiles(self) -> None:
-        """Move projectiles and remove those leaving the canvas."""
+    def _update_projectiles(self, step: float | None = None) -> None:
+        """Move projectiles and remove those leaving the canvas.
+
+        Args:
+            step: Distance each projectile travels for this update. If
+                ``None``, ``self.projectile_speed`` is used.
+        """
+        if step is None:
+            step = self.projectile_speed
         remaining = []
         for proj in self.projectiles:
-            proj["x"] += proj["direction"] * self.projectile_speed
+            proj["x"] += proj["direction"] * step
             if 0 <= proj["x"] <= self.canvas_width:
                 remaining.append(proj)
         self.projectiles = remaining
@@ -495,36 +502,44 @@ class VPetEngine:
                         event.start(self)
                         break
 
-            # Update active projectiles
-            self._update_projectiles()
-
-            # Use main thread to trigger position update callback
+            # Prepare for rendering and smoother projectile motion
             callback = self.on_position_update_callback
             root = self.root_window
-            # Runtime type checks to guarantee safe usage
-            if (
-                callback is not None
-                and callable(callback)
-                and root is not None
-                and hasattr(root, "after")
-                and callable(getattr(root, "after", None))
-            ):
-                sprite_key = self.get_current_sprite_key()
-                y_position = self.canvas_height // 2  # Center vertically
-                projectiles_snapshot = [p.copy() for p in self.projectiles]
-                root.after(
-                    0,
-                    lambda: callback(  # type: ignore[operator]
-                        self.x_position,
-                        y_position,
-                        self.current_frame,
-                        sprite_key,
-                        projectiles_snapshot,
-                    ),
-                )
+            sprite_key = self.get_current_sprite_key()
+            y_position = self.canvas_height // 2  # Center vertically
 
-            # Wait based on animation speed
-            time.sleep(animation_delay)
+            # Number of projectile updates within this frame
+            projectile_steps = 3
+            step_delay = animation_delay / projectile_steps
+            step_distance = self.projectile_speed / projectile_steps
+
+            for _ in range(projectile_steps):
+                # Update active projectiles in small increments
+                self._update_projectiles(step_distance)
+
+                # Runtime type checks to guarantee safe usage
+                if (
+                    callback is not None
+                    and callable(callback)
+                    and root is not None
+                    and hasattr(root, "after")
+                    and callable(getattr(root, "after", None))
+                ):
+                    projectiles_snapshot = [p.copy() for p in self.projectiles]
+
+                    def _cb(
+                        x=self.x_position,
+                        y=y_position,
+                        frame=self.current_frame,
+                        key=sprite_key,
+                        projs=projectiles_snapshot,
+                        cb=callback,
+                    ) -> None:
+                        cb(x, y, frame, key, projs)  # type: ignore[operator]
+
+                    root.after(0, _cb)
+
+                time.sleep(step_delay)
 
     def _get_animation_parameters(self) -> Tuple[int, float]:
         """

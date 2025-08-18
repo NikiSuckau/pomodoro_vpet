@@ -27,8 +27,9 @@ def test_attack_launches_projectile():
     attack_event.start(engine)
     # No projectiles initially
     assert engine.projectiles == []
-    # First update should spawn projectile
-    attack_event.update(engine)
+    # Advance to the release frame where projectile launches
+    for _ in range(attack_event.frame_delay + 1):
+        attack_event.update(engine)
     assert len(engine.projectiles) == 1
     # Update projectiles until they vanish
     for _ in range(10):
