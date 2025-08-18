@@ -18,6 +18,13 @@ import random
 from dataclasses import dataclass, field
 from typing import Callable, Dict, Iterable, Optional, Sequence
 
+try:  # pragma: no cover - logger import guarded for environments without loguru
+    from loguru import logger
+except ImportError:  # pragma: no cover - fallback to stdlib logging
+    import logging
+
+    logger = logging.getLogger(__name__)
+
 
 @dataclass
 class PetEvent:
@@ -70,6 +77,10 @@ class PetEvent:
         self._current_frame_index = 0
         self._frame_delay_counter = 0
         self._cycles_remaining = self.cycles
+        total_frames = len(self.frames) * self.cycles
+        logger.info(
+            f"Event '{self.name}' triggered for {self.cycles} cycles ({total_frames} frames)"
+        )
 
     def should_trigger(self, engine: "VPetEngine") -> bool:
         """Return ``True`` if the event wants to start."""
@@ -106,10 +117,16 @@ class PetEvent:
         The optional ``on_complete`` callback may return the name of
         another event that should trigger immediately.
         """
-
+        next_event: Optional[str] = None
         if self.on_complete:
-            return self.on_complete(engine)
-        return None
+            next_event = self.on_complete(engine)
+        if next_event:
+            logger.info(
+                f"Event '{self.name}' completed, chaining to '{next_event}'"
+            )
+        else:
+            logger.info(f"Event '{self.name}' completed")
+        return next_event
 
 
 class HappyEvent(PetEvent):
