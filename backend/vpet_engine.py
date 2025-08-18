@@ -11,6 +11,13 @@ import time
 from pathlib import Path
 from typing import Any, Callable, Dict, Optional, Tuple
 
+from .pet_events import (
+    AttackTrainingEvent,
+    HappyEvent,
+    PetEvent,
+    collect_event_frames,
+)
+
 # Enhanced imports with fallbacks
 try:
     from loguru import logger
@@ -58,35 +65,22 @@ class VPetEngine:
         # Animation state
         self.x_position = 10
         self.direction = 1  # 1 for right, -1 for left
-        self.current_frame = 0  # Current animation frame (0 or 1 for walking)
         self.canvas_width = 230
         self.canvas_height = 60
         self.sprite_width = 48
         self.margin = 12
 
-        # Happy event state
-        self.is_in_happy_event = False
-        self.happy_cycles_remaining = 0
-        self.happy_frame_counter = 0  # Alternates between 0 (frame 3) and 1 (frame 7)
-        self.happy_event_probability = 0.03  # 3% chance per animation frame
-        self.happy_animation_delay_counter = 0  # Counter to slow down happy animation
-        self.happy_animation_delay_threshold = (
-            2  # Number of animation cycles before switching happy frame
-        )
+        # Walking animation frames (facing left by default)
+        self.walk_frames = [0, 1]
+        self.walk_frame_index = 0
+        self.current_frame = self.walk_frames[self.walk_frame_index]
 
-        # Attack training (new)
-        self.is_attack_training = False
-        self.attack_frames_remaining = 0
-        self.attack_animation_length = 0
-        self.attack_training_probability = (
-            0.8  # 10% chance per animation frame (tunable)
-        )
-        # Attack now alternates between frame 6 and 11
-        self.attack_frames = [6, 11]  # 6 = attack 1, 11 = attack 2
-        self.attack_frame_counter = 0  # Used to alternate between frames
-        self.attack_animation_delay_counter = 0
-        self.attack_animation_delay_threshold = 3  # can be used to slow attack anim
-        self.attack_just_finished = False  # To signal happy after attack
+        # Registered animation events
+        self.events: Dict[str, PetEvent] = {}
+        self.active_event: Optional[PetEvent] = None
+
+        # Register default events (attack training and happy celebration)
+        self._register_default_events()
 
         # Random walk state
         self.distance_walked = 0  # Distance walked in current direction
@@ -127,6 +121,29 @@ class VPetEngine:
         """
         self.on_position_update_callback = on_position_update
 
+    # ------------------------------------------------------------------
+    # Event registration helpers
+
+    def register_event(self, event: PetEvent) -> None:
+        """Register a new animation event with the engine."""
+        self.events[event.name] = event
+
+    def _activate_event(self, name: str) -> None:
+        """Start an event by name if it exists."""
+        event = self.events.get(name)
+        if event is not None:
+            event.start(self)
+            self.active_event = event
+
+    def _register_default_events(self) -> None:
+        """Register built-in events used by the engine."""
+        # Happy event may be triggered manually after other events
+        happy = HappyEvent()
+        # Attack training automatically triggers the happy event when done
+        attack = AttackTrainingEvent(on_complete=lambda eng: "happy")
+        self.register_event(attack)
+        self.register_event(happy)
+
     def set_sprite_directory(self, sprite_directory: str):
         """
         Set the sprite directory to a new path.
@@ -147,6 +164,11 @@ class VPetEngine:
         """
         sprite_dir = Path(self.sprite_directory)
 
+        # Determine which sprite frames are required by walking and events
+        required = set(self.walk_frames)
+        required.update(collect_event_frames(self.events))
+        self._required_frame_ids = sorted(required)
+
         if not sprite_dir.exists():
             logger.warning(f"Sprite directory not found: {sprite_dir}")
             self._create_fallback_sprites()
@@ -166,8 +188,8 @@ class VPetEngine:
         """Load sprites using PIL for better handling and flipping."""
         loaded_count = 0
 
-        # Load walking animation frames (0, 1), happy frames (3, 7), attack frames (6, 11)
-        for frame_id in [0, 1, 3, 7, 6, 11]:
+        # Load all required frames for walking and registered events
+        for frame_id in self._required_frame_ids:
             sprite_path = Path(self.sprite_directory) / f"{frame_id}.png"
 
             if sprite_path.exists():
@@ -176,12 +198,11 @@ class VPetEngine:
                     pil_image = Image.open(sprite_path)
                     self.sprites[f"frame_{frame_id}"] = pil_image.copy()
 
-                    # Create flipped version for walking, happy, and attack frames
-                    if frame_id in [0, 1, 3, 7, 6, 11]:
-                        flipped_image = pil_image.transpose(
-                            Image.Transpose.FLIP_LEFT_RIGHT
-                        )
-                        self.sprites[f"frame_{frame_id}_flipped"] = flipped_image
+                    # Create flipped version for right-facing movement
+                    flipped_image = pil_image.transpose(
+                        Image.Transpose.FLIP_LEFT_RIGHT
+                    )
+                    self.sprites[f"frame_{frame_id}_flipped"] = flipped_image
 
                     loaded_count += 1
                     logger.info(f"Loaded sprite: {sprite_path}")
@@ -197,8 +218,8 @@ class VPetEngine:
         """Load sprites using basic method without PIL."""
         loaded_count = 0
 
-        # Load walking animation frames (0, 1), happy animation frames (3, 7), and attack frames (6, 11)
-        for frame_id in [0, 1, 3, 7, 6, 11]:
+        # Load all required frames for walking and registered events
+        for frame_id in self._required_frame_ids:
             sprite_path = Path(self.sprite_directory) / f"{frame_id}.png"
 
             if sprite_path.exists():
@@ -206,11 +227,10 @@ class VPetEngine:
                     # Store path for later loading by GUI
                     self.sprites[f"frame_{frame_id}"] = str(sprite_path)
 
-                    # Create flipped version for walking, happy, and attack frames
-                    if frame_id in [0, 1, 3, 7, 6, 11]:
-                        self.sprites[f"frame_{frame_id}_flipped"] = str(
-                            sprite_path
-                        )  # Same file, flipping handled by GUI
+                    # Create flipped version for right-facing movement (handled by GUI)
+                    self.sprites[f"frame_{frame_id}_flipped"] = str(
+                        sprite_path
+                    )
 
                     loaded_count += 1
                     logger.info(f"Registered sprite: {sprite_path}")
@@ -225,10 +245,9 @@ class VPetEngine:
     def _create_fallback_sprites(self) -> None:
         """Create fallback sprites when loading fails."""
         # Create placeholder sprite data
-        for frame_id in [0, 1, 3, 7, 6, 11]:
+        for frame_id in self._required_frame_ids:
             self.sprites[f"frame_{frame_id}"] = None
-            if frame_id in [0, 1, 3, 7, 6, 11]:
-                self.sprites[f"frame_{frame_id}_flipped"] = None
+            self.sprites[f"frame_{frame_id}_flipped"] = None
 
         logger.info("Using fallback sprites")
 
@@ -259,18 +278,13 @@ class VPetEngine:
         """
         self.current_mode = mode
 
-        # --- Reset any ongoing happy or attack event when switching mode ---
-        if self.is_in_happy_event or self.is_attack_training:
-            self.is_in_happy_event = False
-            self.happy_cycles_remaining = 0
-            self.happy_frame_counter = 0
-            self.happy_animation_delay_counter = 0
-            self.is_attack_training = False
-            self.attack_frames_remaining = 0
-            self.attack_frame_counter = 0
-            self.attack_animation_delay_counter = 0
-            self.attack_just_finished = False
-            logger.info("VPet mode switch: forcibly ending happy/attack animation, resuming normal behavior")
+        # --- Reset any ongoing event when switching mode ---
+        if self.active_event and self.active_event.active:
+            self.active_event.active = False
+            self.active_event = None
+            logger.info(
+                "VPet mode switch: forcibly ending active event, resuming normal behavior"
+            )
 
         logger.info(f"VPet mode set to: {mode}")
 
@@ -306,40 +320,11 @@ class VPetEngine:
         Returns:
             str: Sprite key for current state
         """
-        # Attack animation in training
-        if self.is_attack_training:
-            # Alternate between frame 6 and 11 for attack
-            attack_frame = self.attack_frames[
-                self.attack_frame_counter % len(self.attack_frames)
-            ]
-            base_key = f"frame_{attack_frame}"
-            # Use flipped sprite if moving right, else normal (left-facing)
-            if self.direction == 1:
-                return f"{base_key}_flipped"
-            else:
-                return base_key
-
-        # If in happy event, use happy animation frames with direction consideration
-        if self.is_in_happy_event:
-            if self.happy_frame_counter == 0:
-                base_key = "frame_7"  # Happy 1 (switched)
-            else:
-                base_key = "frame_3"  # Happy 2 (switched)
-
-            # Use flipped sprite if moving right (since default sprite faces left)
-            if self.direction == 1:  # Moving right
-                return f"{base_key}_flipped"
-            else:  # Moving left
-                return base_key
-
-        # Normal walking animation
         base_key = f"frame_{self.current_frame}"
-
         # Use flipped sprite if moving right (since default sprite faces left)
-        if self.direction == 1:  # Moving right
+        if self.direction == 1:
             return f"{base_key}_flipped"
-        else:  # Moving left
-            return base_key
+        return base_key
 
     def get_sprite(self, sprite_key: str):
         """
@@ -403,108 +388,40 @@ class VPetEngine:
             # Get animation parameters based on mode
             move_speed, animation_delay = self._get_animation_parameters()
 
-            # ---- Attack training logic (only in work mode, timer running, and active) ----
-            # Attack training only triggers in work mode and if timer is running
-            # (requires MainWindow to call set_timer_running accordingly)
-            is_timer_running = getattr(
-                self, "is_timer_running", True
-            )  # default True for backward compat
-            if (
-                self.current_mode == "work"
-                and self.animation_running
-                and is_timer_running
-                and not self.is_in_happy_event
-            ):
-                if self.is_attack_training:
-                    self.attack_animation_delay_counter += 1
-                    if (
-                        self.attack_animation_delay_counter
-                        >= self.attack_animation_delay_threshold
-                    ):
-                        self.attack_frames_remaining -= 1
-                        self.attack_animation_delay_counter = 0
-                        # Alternate attack frame (cycles between 6 and 11)
-                        self.attack_frame_counter = (
-                            self.attack_frame_counter + 1
-                        ) % len(self.attack_frames)
-
-                    if self.attack_frames_remaining <= 0:
-                        self.is_attack_training = False
-                        self.attack_just_finished = True
-                        self.attack_frame_counter = 0  # Reset for next attack
-                        logger.info(
-                            "Attack training finished, will trigger happy animation next"
-                        )
-                elif (
-                    random.random() < self.attack_training_probability
-                    and not self.attack_just_finished
-                ):
-                    self.is_attack_training = True
-                    self.attack_frames_remaining = random.randint(5, 10)
-                    self.attack_animation_delay_counter = 0
-                    logger.info(
-                        f"Attack training triggered for {self.attack_frames_remaining} frames!"
-                    )
-
-            # ---- Happy event after attack training ----
-            if self.attack_just_finished:
-                self._trigger_happy_event()
-                self.attack_just_finished = False
-
-            # Handle happy event logic
-            if self.is_in_happy_event:
-                # During happy event, pet stands still and alternates happy frames slowly
-                self.happy_animation_delay_counter += 1
-
-                # Only switch frames after delay threshold is reached
-                if (
-                    self.happy_animation_delay_counter
-                    >= self.happy_animation_delay_threshold
-                ):
-                    self.happy_frame_counter = (
-                        1 - self.happy_frame_counter
-                    )  # Alternate between 0 and 1
-                    self.happy_cycles_remaining -= (
-                        0.5  # Each frame change is half a cycle
-                    )
-                    self.happy_animation_delay_counter = 0  # Reset delay counter
-
-                # Check if happy event is finished
-                if self.happy_cycles_remaining <= 0:
-                    self.is_in_happy_event = False
-                    self.happy_frame_counter = 0
-                    self.happy_animation_delay_counter = 0  # Reset delay counter
-                    logger.info("Happy event finished, resuming normal walking")
-            elif self.is_attack_training:
-                # During attack, no walking, just show attack frame
-                pass
+            if self.active_event and self.active_event.active:
+                # An event is running – update its animation
+                frame, finished = self.active_event.update(self)
+                self.current_frame = frame
+                if finished:
+                    next_event = self.active_event.complete(self)
+                    self.active_event = None
+                    if next_event:
+                        self._activate_event(next_event)
             else:
-                # Normal walking behavior
-                # Check for random happy event trigger
-                if random.random() < self.happy_event_probability:
-                    self._trigger_happy_event()
-                else:
-                    # Move the pet
-                    old_position = self.x_position
-                    self.x_position += self.direction * move_speed
+                # Normal walking behaviour
+                old_position = self.x_position
+                self.x_position += self.direction * move_speed
 
-                    # Update distance walked
-                    distance_moved = abs(self.x_position - old_position)
-                    self.distance_walked += distance_moved
+                # Update distance walked and possibly change direction
+                distance_moved = abs(self.x_position - old_position)
+                self.distance_walked += distance_moved
+                boundary_hit = self._check_boundaries()
+                if boundary_hit:
+                    self.distance_walked = 0
+                elif self._should_change_direction():
+                    self._change_direction_randomly()
+                    self.distance_walked = 0
 
-                    # Check boundaries and handle mandatory direction change
-                    boundary_hit = self._check_boundaries()
+                # Alternate walking frames
+                self.walk_frame_index = 1 - self.walk_frame_index
+                self.current_frame = self.walk_frames[self.walk_frame_index]
 
-                    # If boundary was hit, reset distance counter
-                    if boundary_hit:
-                        self.distance_walked = 0
-                    # Otherwise, check for random direction change
-                    elif self._should_change_direction():
-                        self._change_direction_randomly()
-                        self.distance_walked = 0
-
-                    # Alternate walking frames
-                    self.current_frame = 1 - self.current_frame
+                # Attempt to trigger any event
+                for event in self.events.values():
+                    if event.should_trigger(self):
+                        self.active_event = event
+                        event.start(self)
+                        break
 
             # Use main thread to trigger position update callback
             callback = self.on_position_update_callback
@@ -583,16 +500,6 @@ class VPetEngine:
         self.direction = -self.direction
         logger.debug(
             f"Random direction change: now moving {'right' if self.direction == 1 else 'left'}"
-        )
-
-    def _trigger_happy_event(self) -> None:
-        """Trigger a happy animation event."""
-        # Random number of cycles between 2 and 4
-        self.happy_cycles_remaining = random.randint(1, 3)
-        self.is_in_happy_event = True
-        self.happy_frame_counter = 0  # Start with happy frame 1 (frame 3)
-        logger.info(
-            f"Happy event triggered! Will play {self.happy_cycles_remaining} cycles"
         )
 
     def _ensure_within_boundaries(self) -> None:
