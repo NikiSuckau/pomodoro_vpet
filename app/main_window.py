@@ -252,7 +252,7 @@ class MainWindow:
         logger.info(f"Session completed: {completed_mode}")
 
     def _on_vpet_position_update(
-        self, x: int, y: int, frame: int, sprite_key: str
+        self, x: int, y: int, frame: int, sprite_key: str, projectiles: list
     ) -> None:
         """
         Handle VPet position update.
@@ -262,15 +262,25 @@ class MainWindow:
             y: Y position
             frame: Animation frame
             sprite_key: Key for the sprite to display
+            projectiles: List of active projectile dictionaries
         """
         if self.vpet_gui:
             # Get sprite data from VPet engine
             sprite_data = self.vpet_engine.get_sprite(sprite_key)
             current_mode = self.vpet_engine.current_mode
 
+            projectile_sprites = []
+            for proj in projectiles:
+                psprite_data = self.vpet_engine.get_projectile_sprite(
+                    proj.get("sprite_key", "")
+                )
+                projectile_sprites.append(
+                    (proj.get("x", 0), proj.get("y", 0), psprite_data, proj.get("sprite_key", ""))
+                )
+
             # Update VPet display
             self.vpet_gui.update_vpet_display(
-                x, y, sprite_data, sprite_key, current_mode
+                x, y, sprite_data, sprite_key, current_mode, projectile_sprites
             )
 
             # Set direction hint for fallback rendering

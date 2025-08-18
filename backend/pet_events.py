@@ -168,6 +168,22 @@ class AttackTrainingEvent(PetEvent):
         self.cycles = random.randint(5, 10)
         super().start(engine)
 
+    def update(self, engine: "VPetEngine") -> tuple[int, bool]:  # type: ignore[override]
+        """Advance attack animation and launch projectiles.
+
+        Whenever a new attack cycle begins (the first frame of the
+        animation sequence), a projectile is spawned via the engine's
+        ``launch_projectile`` method.  The projectile will travel in the
+        direction the pet is currently facing.
+        """
+
+        if self._current_frame_index == 0 and self._frame_delay_counter == 0:
+            # Start of a new attack swing – launch a projectile if supported
+            launch = getattr(engine, "launch_projectile", None)
+            if callable(launch):
+                launch()
+        return super().update(engine)
+
 
 # Utility function -----------------------------------------------------------
 

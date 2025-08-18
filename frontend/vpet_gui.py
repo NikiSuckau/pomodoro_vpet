@@ -115,6 +115,7 @@ class VPetGUI:
         sprite_data,
         sprite_key: str,
         current_mode: str,
+        projectiles: Optional[list] = None,
     ) -> None:
         """
         Update the VPet display with new position and sprite.
@@ -125,6 +126,7 @@ class VPetGUI:
             sprite_data: Sprite data to display
             sprite_key: Key identifying the sprite
             current_mode: Current timer mode ("work" or "break")
+            projectiles: Optional list of projectile tuples
         """
         if not self.vpet_canvas:
             return
@@ -145,6 +147,13 @@ class VPetGUI:
         else:
             # Fallback: draw a simple shape
             self._draw_fallback_vpet(x_position, y_position)
+
+        # Draw projectiles if any
+        if projectiles:
+            for px, py, psprite_data, psprite_key in projectiles:
+                tk_proj = self.load_sprite_for_display(psprite_data, psprite_key)
+                if tk_proj:
+                    self.vpet_canvas.create_image(px, py, image=tk_proj, anchor="w")
 
     def _draw_fallback_vpet(self, x_position: int, y_position: int) -> None:
         """

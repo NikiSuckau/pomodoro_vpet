@@ -60,6 +60,7 @@ class VPetEngine:
         """
         self.sprite_directory = sprite_directory
         self.sprites: Dict[str, any] = {}
+        self.projectile_sprites: Dict[str, any] = {}
         self.root_window = root_window
 
         # Animation state
@@ -69,6 +70,10 @@ class VPetEngine:
         self.canvas_height = 60
         self.sprite_width = 48
         self.margin = 12
+        # Projectile state
+        self.projectiles: list[dict] = []
+        self.projectile_speed = 8
+        self.projectile_width = 20
 
         # Walking animation frames (facing left by default)
         self.walk_frames = [0, 1]
@@ -104,20 +109,24 @@ class VPetEngine:
 
         # Callbacks
         self.on_position_update_callback: Optional[
-            Callable[[int, int, int, str], None]
+            Callable[[int, int, int, str, list], None]
         ] = None
 
         # Load sprites
         self.load_sprites()
 
     def set_callbacks(
-        self, on_position_update: Optional[Callable[[int, int, int, str], None]] = None
+        self,
+        on_position_update: Optional[
+            Callable[[int, int, int, str, list], None]
+        ] = None,
     ):
         """
         Set callback functions for VPet events.
 
         Args:
-            on_position_update: Called when pet position updates (x, y, frame, direction_key)
+            on_position_update: Called when pet position updates
+                (x, y, frame, direction_key, projectiles)
         """
         self.on_position_update_callback = on_position_update
 
@@ -176,9 +185,13 @@ class VPetEngine:
 
         try:
             if PIL_AVAILABLE:
-                return self._load_sprites_with_pil()
+                success = self._load_sprites_with_pil()
             else:
-                return self._load_sprites_basic()
+                success = self._load_sprites_basic()
+
+            # Load projectile sprite regardless of general sprite success
+            self._load_projectile_sprite()
+            return success
         except Exception as e:
             logger.error(f"Error loading sprites: {e}")
             self._create_fallback_sprites()
@@ -212,6 +225,8 @@ class VPetEngine:
             else:
                 logger.warning(f"Sprite not found: {sprite_path}")
 
+        # Also load projectile sprite
+        self._load_projectile_sprite()
         return loaded_count > 0
 
     def _load_sprites_basic(self) -> bool:
@@ -240,7 +255,31 @@ class VPetEngine:
             else:
                 logger.warning(f"Sprite not found: {sprite_path}")
 
+        # Also load projectile sprite
+        self._load_projectile_sprite()
         return loaded_count > 0
+
+    def _load_projectile_sprite(self) -> None:
+        """Load the projectile sprite used for attack projectiles."""
+        sprite_path = Path("sprites/attacks/fireball_20x18.png")
+        if not sprite_path.exists():
+            logger.warning(f"Projectile sprite not found: {sprite_path}")
+            return
+
+        try:
+            if PIL_AVAILABLE:
+                pil_image = Image.open(sprite_path)
+                self.projectile_sprites["fireball"] = pil_image.copy()
+                self.projectile_sprites["fireball_flipped"] = pil_image.transpose(
+                    Image.Transpose.FLIP_LEFT_RIGHT
+                )
+            else:
+                path = str(sprite_path)
+                self.projectile_sprites["fireball"] = path
+                self.projectile_sprites["fireball_flipped"] = path
+            logger.info(f"Loaded projectile sprite: {sprite_path}")
+        except Exception as e:
+            logger.error(f"Failed to load projectile sprite {sprite_path}: {e}")
 
     def _create_fallback_sprites(self) -> None:
         """Create fallback sprites when loading fails."""
@@ -250,6 +289,8 @@ class VPetEngine:
             self.sprites[f"frame_{frame_id}_flipped"] = None
 
         logger.info("Using fallback sprites")
+        self.projectile_sprites["fireball"] = None
+        self.projectile_sprites["fireball_flipped"] = None
 
     def start_animation(self) -> None:
         """Start the VPet animation."""
@@ -338,6 +379,37 @@ class VPetEngine:
         """
         return self.sprites.get(sprite_key)
 
+    def get_projectile_sprite(self, sprite_key: str):
+        """Return projectile sprite data for the given key."""
+        return self.projectile_sprites.get(sprite_key)
+
+    def launch_projectile(self) -> None:
+        """Spawn a new projectile in front of the pet."""
+        y_pos = self.canvas_height // 2
+        if self.direction == 1:  # moving right
+            start_x = self.x_position + self.sprite_width
+            sprite_key = "fireball_flipped"
+        else:
+            start_x = self.x_position - self.projectile_width
+            sprite_key = "fireball"
+
+        projectile = {
+            "x": start_x,
+            "y": y_pos,
+            "direction": self.direction,
+            "sprite_key": sprite_key,
+        }
+        self.projectiles.append(projectile)
+
+    def _update_projectiles(self) -> None:
+        """Move projectiles and remove those leaving the canvas."""
+        remaining = []
+        for proj in self.projectiles:
+            proj["x"] += proj["direction"] * self.projectile_speed
+            if 0 <= proj["x"] <= self.canvas_width:
+                remaining.append(proj)
+        self.projectiles = remaining
+
     def set_canvas_size(self, width: int, height: int) -> None:
         """
         Set the canvas dimensions for movement calculations.
@@ -423,6 +495,9 @@ class VPetEngine:
                         event.start(self)
                         break
 
+            # Update active projectiles
+            self._update_projectiles()
+
             # Use main thread to trigger position update callback
             callback = self.on_position_update_callback
             root = self.root_window
@@ -436,10 +511,15 @@ class VPetEngine:
             ):
                 sprite_key = self.get_current_sprite_key()
                 y_position = self.canvas_height // 2  # Center vertically
-                root.after(  # type: ignore[attr-defined]
+                projectiles_snapshot = [p.copy() for p in self.projectiles]
+                root.after(
                     0,
                     lambda: callback(  # type: ignore[operator]
-                        self.x_position, y_position, self.current_frame, sprite_key
+                        self.x_position,
+                        y_position,
+                        self.current_frame,
+                        sprite_key,
+                        projectiles_snapshot,
                     ),
                 )
 
