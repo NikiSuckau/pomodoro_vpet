@@ -375,8 +375,8 @@ class VPetEngine:
         return self.projectile_sprites.get(sprite_key)
 
     def launch_projectile(self) -> None:
-        """Spawn a new projectile in front of the pet with 10% overlap."""
-        y_pos = self.canvas_height - self.sprite_height // 2
+        """Spawn a new projectile in front of the pet at mid-body height."""
+        y_pos = self.canvas_height // 2 - self.sprite_height // 4
         overlap = self.sprite_width * 0.2  # Calculate 20% overlap
 
         if self.direction == 1:  # moving right

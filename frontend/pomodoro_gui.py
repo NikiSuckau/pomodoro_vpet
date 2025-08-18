@@ -44,6 +44,14 @@ class PomodoroGUI:
         self.start_pause_btn: Optional[tk.Button] = None
         self.reset_btn: Optional[tk.Button] = None
         self.exit_btn: Optional[tk.Button] = None
+        self.config_btn: Optional[tk.Button] = None
+
+        # Digimon related widgets
+        self.digimon_var = tk.StringVar(value="Agumon")
+        self.digimon_selector: Optional[tk.OptionMenu] = None
+        self.import_btn: Optional[tk.Button] = None
+        self.config_window: Optional[tk.Toplevel] = None
+        self._digimon_list: list = []
         
         # Current state for display
         self.current_mode = "work"
@@ -138,18 +146,40 @@ class PomodoroGUI:
             activeforeground="#2c3e50",
         )
         self.exit_btn.pack(side="left")
-        
-        # Digimon management frame with transparent background
-        digimon_frame = tk.Frame(self.parent_frame, bg=self.transparent_color)
-        digimon_frame.pack(pady=(10, 0))
-        
-        # Digimon selector dropdown
-        self.digimon_var = tk.StringVar(value="Agumon")
+
+        # Configuration button to access Digimon settings
+        self.config_btn = tk.Button(
+            button_frame,
+            text="Config",
+            command=self._open_config_window,
+            font=("Arial", 9),
+            bg="#3498db",
+            fg="#ffffff",
+            relief="flat",
+            width=8,
+            activebackground="#2980b9",
+            activeforeground="#ffffff",
+        )
+        self.config_btn.pack(side="left", padx=(5, 0))
+
+    def _open_config_window(self) -> None:
+        """Open a configuration window for Digimon settings."""
+        if self.config_window and self.config_window.winfo_exists():
+            self.config_window.lift()
+            return
+
+        self.config_window = tk.Toplevel(self.parent_frame)
+        self.config_window.title("Configuration")
+        self.config_window.protocol("WM_DELETE_WINDOW", self._on_config_closed)
+
+        digimon_frame = tk.Frame(self.config_window, bg=self.transparent_color)
+        digimon_frame.pack(padx=10, pady=10)
+
         self.digimon_selector = tk.OptionMenu(
             digimon_frame,
             self.digimon_var,
-            "Agumon",
-            command=self._on_digimon_changed
+            self.digimon_var.get(),
+            command=self._on_digimon_changed,
         )
         self.digimon_selector.config(
             font=("Arial", 8),
@@ -158,17 +188,16 @@ class PomodoroGUI:
             activebackground="#2c3e50",
             activeforeground="#ffffff",
             relief="flat",
-            width=10
+            width=10,
         )
         self.digimon_selector["menu"].config(
             bg="#34495e",
             fg="#ffffff",
             activebackground="#2c3e50",
-            activeforeground="#ffffff"
+            activeforeground="#ffffff",
         )
         self.digimon_selector.pack(side="left", padx=(0, 5))
-        
-        # Import button
+
         self.import_btn = tk.Button(
             digimon_frame,
             text="Import",
@@ -182,6 +211,17 @@ class PomodoroGUI:
             activeforeground="#ffffff",
         )
         self.import_btn.pack(side="left")
+
+        # Populate selector with available Digimon
+        self.update_digimon_list(self._digimon_list)
+
+    def _on_config_closed(self) -> None:
+        """Handle closing of the configuration window."""
+        if self.config_window:
+            self.config_window.destroy()
+            self.config_window = None
+        self.digimon_selector = None
+        self.import_btn = None
     
     def update_time_display(self, time_text: str) -> None:
         """
@@ -304,24 +344,25 @@ class PomodoroGUI:
     def update_digimon_list(self, digimon_list: list) -> None:
         """
         Update the Digimon selector dropdown with available Digimon.
-        
+
         Args:
             digimon_list: List of available Digimon names
         """
+        self._digimon_list = digimon_list
         if not self.digimon_selector:
             return
-        
+
         # Clear existing options
         menu = self.digimon_selector['menu']
         menu.delete(0, 'end')
-        
+
         # Add new options
         for digimon in digimon_list:
             menu.add_command(
                 label=digimon,
                 command=tk._setit(self.digimon_var, digimon, self._on_digimon_changed)
             )
-        
+
         # Set default if current selection is not in the list
         current_selection = self.digimon_var.get()
         if current_selection not in digimon_list and digimon_list:
