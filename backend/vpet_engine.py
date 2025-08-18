@@ -11,12 +11,8 @@ import time
 from pathlib import Path
 from typing import Any, Callable, Dict, Optional, Tuple
 
-from .pet_events import (
-    AttackTrainingEvent,
-    HappyEvent,
-    PetEvent,
-    collect_event_frames,
-)
+from .pet_events import (AttackTrainingEvent, HappyEvent, PetEvent,
+                         collect_event_frames)
 
 # Enhanced imports with fallbacks
 try:
@@ -118,9 +114,7 @@ class VPetEngine:
 
     def set_callbacks(
         self,
-        on_position_update: Optional[
-            Callable[[int, int, int, str, list], None]
-        ] = None,
+        on_position_update: Optional[Callable[[int, int, int, str, list], None]] = None,
     ):
         """
         Set callback functions for VPet events.
@@ -213,9 +207,7 @@ class VPetEngine:
                     self.sprites[f"frame_{frame_id}"] = pil_image.copy()
 
                     # Create flipped version for right-facing movement
-                    flipped_image = pil_image.transpose(
-                        Image.Transpose.FLIP_LEFT_RIGHT
-                    )
+                    flipped_image = pil_image.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
                     self.sprites[f"frame_{frame_id}_flipped"] = flipped_image
 
                     loaded_count += 1
@@ -244,9 +236,7 @@ class VPetEngine:
                     self.sprites[f"frame_{frame_id}"] = str(sprite_path)
 
                     # Create flipped version for right-facing movement (handled by GUI)
-                    self.sprites[f"frame_{frame_id}_flipped"] = str(
-                        sprite_path
-                    )
+                    self.sprites[f"frame_{frame_id}_flipped"] = str(sprite_path)
 
                     loaded_count += 1
                     logger.info(f"Registered sprite: {sprite_path}")
@@ -385,13 +375,15 @@ class VPetEngine:
         return self.projectile_sprites.get(sprite_key)
 
     def launch_projectile(self) -> None:
-        """Spawn a new projectile in front of the pet."""
-        y_pos = self.canvas_height // 2 - self.sprite_height // 4
+        """Spawn a new projectile in front of the pet with 10% overlap."""
+        y_pos = self.canvas_height - self.sprite_height // 2
+        overlap = self.sprite_width * 0.2  # Calculate 20% overlap
+
         if self.direction == 1:  # moving right
-            start_x = self.x_position + self.sprite_width
+            start_x = self.x_position + self.sprite_width - overlap
             sprite_key = "fireball_flipped"
         else:
-            start_x = self.x_position - self.projectile_width
+            start_x = self.x_position - self.projectile_width + overlap
             sprite_key = "fireball"
 
         projectile = {

@@ -41,8 +41,38 @@
       "directory": "Beelzemon (2010 Anime Version)_penc",
       "imported_date": "2025-08-16",
       "default": false
+    },
+    {
+      "name": "Bommon",
+      "directory": "Bommon_penc",
+      "imported_date": "2025-08-18",
+      "default": false
+    },
+    {
+      "name": "Hagurumon",
+      "directory": "Hagurumon_penc",
+      "imported_date": "2025-08-18",
+      "default": false
+    },
+    {
+      "name": "Missimon",
+      "directory": "Missimon_penc",
+      "imported_date": "2025-08-18",
+      "default": false
+    },
+    {
+      "name": "Thundermon",
+      "directory": "Thundermon_penc",
+      "imported_date": "2025-08-18",
+      "default": false
+    },
+    {
+      "name": "Shootmon",
+      "directory": "Shootmon_penc",
+      "imported_date": "2025-08-18",
+      "default": false
     }
   ],
-  "last_updated": "2025-08-16T14:14:26.130133",
+  "last_updated": "2025-08-18T16:46:56.099223",
   "format_version": "1.0"
 }

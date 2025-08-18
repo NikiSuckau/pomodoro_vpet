@@ -6721,3 +6721,925 @@
 2025-08-18 16:05:31.241 | INFO     | app.main_window:cleanup:475 - Application cleanup completed
 2025-08-18 16:05:31.297 | INFO     | backend.vpet_engine:stop_animation:270 - VPet animation stopped
 2025-08-18 16:05:31.297 | INFO     | app.main_window:cleanup:475 - Application cleanup completed
+2025-08-18 16:27:33.279 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/0.png
+2025-08-18 16:27:33.279 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/1.png
+2025-08-18 16:27:33.279 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/3.png
+2025-08-18 16:27:33.280 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/6.png
+2025-08-18 16:27:33.280 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/7.png
+2025-08-18 16:27:33.281 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/11.png
+2025-08-18 16:27:33.281 | INFO     | app.main_window:_extract_vpet_name_from_engine:107 - Extracted vpet name: Agumon
+2025-08-18 16:27:33.281 | INFO     | backend.time_logger:_load_sessions:309 - Loaded 4 existing sessions from data/work_sessions.json
+2025-08-18 16:27:33.281 | INFO     | backend.time_logger:__init__:47 - TimeLogger initialized with log file: data/work_sessions.json
+2025-08-18 16:27:33.396 | INFO     | app.main_window:create_gui_components:164 - GUI components created
+2025-08-18 16:27:33.397 | INFO     | app.main_window:_update_digimon_list:388 - Updated Digimon list: ['Agumon', 'Mokumon', 'DemiMeramon', 'Ghostmon', 'Wizardmon', 'Baalmon', 'Beelzemon (2010 Anime Version)']
+2025-08-18 16:27:33.397 | INFO     | app.main_window:setup_callbacks:195 - Callbacks configured
+2025-08-18 16:27:33.397 | INFO     | backend.vpet_engine:start_animation:264 - VPet animation started
+2025-08-18 16:27:33.398 | INFO     | app.main_window:start_engines:205 - Engines started
+2025-08-18 16:27:33.398 | INFO     | app.main_window:__init__:88 - Main application initialized
+2025-08-18 16:27:33.398 | INFO     | app.main_window:run:455 - Starting application
+2025-08-18 16:27:38.311 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 16:27:39.517 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:27:40.420 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 16:27:41.623 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:27:49.456 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:27:53.070 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:27:59.395 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 16:28:01.801 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:28:09.930 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:28:13.539 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:28:16.547 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 16:28:17.749 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:28:18.351 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 16:28:19.554 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:28:24.366 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:28:27.974 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:28:28.878 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 16:28:30.082 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:28:49.630 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 16:28:50.833 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:29:18.812 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 16:29:20.014 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:29:22.722 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:29:26.332 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:29:28.738 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:29:32.346 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:29:35.955 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 16:29:37.158 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:29:47.987 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:29:51.596 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:29:56.407 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 16:29:58.817 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:30:02.616 | INFO     | app.main_window:_on_exit_clicked:323 - Exit button clicked - shutting down application
+2025-08-18 16:30:02.617 | INFO     | backend.vpet_engine:stop_animation:270 - VPet animation stopped
+2025-08-18 16:30:02.617 | INFO     | app.main_window:cleanup:475 - Application cleanup completed
+2025-08-18 16:30:02.635 | INFO     | backend.vpet_engine:stop_animation:270 - VPet animation stopped
+2025-08-18 16:30:02.635 | INFO     | app.main_window:cleanup:475 - Application cleanup completed
+2025-08-18 16:45:39.144 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/0.png
+2025-08-18 16:45:39.145 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/1.png
+2025-08-18 16:45:39.145 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/3.png
+2025-08-18 16:45:39.146 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/6.png
+2025-08-18 16:45:39.146 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/7.png
+2025-08-18 16:45:39.146 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/11.png
+2025-08-18 16:45:39.147 | INFO     | app.main_window:_extract_vpet_name_from_engine:107 - Extracted vpet name: Agumon
+2025-08-18 16:45:39.147 | INFO     | backend.time_logger:_load_sessions:309 - Loaded 4 existing sessions from data/work_sessions.json
+2025-08-18 16:45:39.147 | INFO     | backend.time_logger:__init__:47 - TimeLogger initialized with log file: data/work_sessions.json
+2025-08-18 16:45:39.239 | INFO     | app.main_window:create_gui_components:164 - GUI components created
+2025-08-18 16:45:39.240 | INFO     | app.main_window:_update_digimon_list:388 - Updated Digimon list: ['Agumon', 'Mokumon', 'DemiMeramon', 'Ghostmon', 'Wizardmon', 'Baalmon', 'Beelzemon (2010 Anime Version)']
+2025-08-18 16:45:39.240 | INFO     | app.main_window:setup_callbacks:195 - Callbacks configured
+2025-08-18 16:45:39.240 | INFO     | backend.vpet_engine:start_animation:264 - VPet animation started
+2025-08-18 16:45:39.241 | INFO     | app.main_window:start_engines:205 - Engines started
+2025-08-18 16:45:39.241 | INFO     | app.main_window:__init__:88 - Main application initialized
+2025-08-18 16:45:39.241 | INFO     | app.main_window:run:455 - Starting application
+2025-08-18 16:45:45.517 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 16:45:46.721 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:46:03.320 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 16:46:05.787 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:46:12.003 | INFO     | backend.digimon_importer:import_digimon:205 - Successfully imported Bommon
+2025-08-18 16:46:14.678 | INFO     | app.main_window:_update_digimon_list:388 - Updated Digimon list: ['Agumon', 'Mokumon', 'DemiMeramon', 'Ghostmon', 'Wizardmon', 'Baalmon', 'Beelzemon (2010 Anime Version)', 'Bommon']
+2025-08-18 16:46:14.679 | INFO     | app.main_window:_on_import_clicked:348 - Successfully imported Digimon from /home/niki/Downloads/Bommon_penc.zip
+2025-08-18 16:46:21.674 | INFO     | backend.digimon_importer:import_digimon:205 - Successfully imported Hagurumon
+2025-08-18 16:46:24.618 | INFO     | app.main_window:_update_digimon_list:388 - Updated Digimon list: ['Agumon', 'Mokumon', 'DemiMeramon', 'Ghostmon', 'Wizardmon', 'Baalmon', 'Beelzemon (2010 Anime Version)', 'Bommon', 'Hagurumon']
+2025-08-18 16:46:24.622 | INFO     | app.main_window:_on_import_clicked:348 - Successfully imported Digimon from /home/niki/Downloads/Hagurumon_penc.zip
+2025-08-18 16:46:35.311 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 16:46:37.717 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:46:37.814 | INFO     | backend.digimon_importer:import_digimon:205 - Successfully imported Missimon
+2025-08-18 16:46:40.386 | INFO     | app.main_window:_update_digimon_list:388 - Updated Digimon list: ['Agumon', 'Mokumon', 'DemiMeramon', 'Ghostmon', 'Wizardmon', 'Baalmon', 'Beelzemon (2010 Anime Version)', 'Bommon', 'Hagurumon', 'Missimon']
+2025-08-18 16:46:40.386 | INFO     | app.main_window:_on_import_clicked:348 - Successfully imported Digimon from /home/niki/Downloads/Missimon_penc.zip
+2025-08-18 16:46:44.036 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:46:47.644 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:46:48.315 | INFO     | backend.digimon_importer:import_digimon:205 - Successfully imported Thundermon
+2025-08-18 16:46:51.920 | INFO     | app.main_window:_update_digimon_list:388 - Updated Digimon list: ['Agumon', 'Mokumon', 'DemiMeramon', 'Ghostmon', 'Wizardmon', 'Baalmon', 'Beelzemon (2010 Anime Version)', 'Bommon', 'Hagurumon', 'Missimon', 'Thundermon']
+2025-08-18 16:46:51.921 | INFO     | app.main_window:_on_import_clicked:348 - Successfully imported Digimon from /home/niki/Downloads/Thundermon_penc.zip
+2025-08-18 16:46:56.100 | INFO     | backend.digimon_importer:import_digimon:205 - Successfully imported Shootmon
+2025-08-18 16:46:58.727 | INFO     | app.main_window:_update_digimon_list:388 - Updated Digimon list: ['Agumon', 'Mokumon', 'DemiMeramon', 'Ghostmon', 'Wizardmon', 'Baalmon', 'Beelzemon (2010 Anime Version)', 'Bommon', 'Hagurumon', 'Missimon', 'Thundermon', 'Shootmon']
+2025-08-18 16:46:58.727 | INFO     | app.main_window:_on_import_clicked:348 - Successfully imported Digimon from /home/niki/Downloads/Shootmon_penc.zip
+2025-08-18 16:47:01.148 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Shootmon_penc/0.png
+2025-08-18 16:47:01.150 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Shootmon_penc/1.png
+2025-08-18 16:47:01.153 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Shootmon_penc/3.png
+2025-08-18 16:47:01.155 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Shootmon_penc/6.png
+2025-08-18 16:47:01.157 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Shootmon_penc/7.png
+2025-08-18 16:47:01.159 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Shootmon_penc/11.png
+2025-08-18 16:47:01.159 | INFO     | backend.pomodoro_engine:set_vpet_name:276 - VPet name changed from Agumon to Shootmon
+2025-08-18 16:47:01.161 | INFO     | app.main_window:_on_digimon_changed:374 - Switched to Digimon: Shootmon
+2025-08-18 16:47:23.139 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 16:47:25.545 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:47:26.146 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 16:47:27.349 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:47:28.160 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Thundermon_penc/0.png
+2025-08-18 16:47:28.162 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Thundermon_penc/1.png
+2025-08-18 16:47:28.164 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Thundermon_penc/3.png
+2025-08-18 16:47:28.165 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Thundermon_penc/6.png
+2025-08-18 16:47:28.166 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Thundermon_penc/7.png
+2025-08-18 16:47:28.168 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Thundermon_penc/11.png
+2025-08-18 16:47:28.169 | INFO     | backend.pomodoro_engine:set_vpet_name:276 - VPet name changed from Shootmon to Thundermon
+2025-08-18 16:47:28.169 | INFO     | app.main_window:_on_digimon_changed:374 - Switched to Digimon: Thundermon
+2025-08-18 16:47:29.454 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 16:47:31.860 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:47:33.064 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:47:34.014 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Missimon_penc/0.png
+2025-08-18 16:47:34.017 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Missimon_penc/1.png
+2025-08-18 16:47:34.019 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Missimon_penc/3.png
+2025-08-18 16:47:34.021 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Missimon_penc/6.png
+2025-08-18 16:47:34.023 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Missimon_penc/7.png
+2025-08-18 16:47:34.025 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Missimon_penc/11.png
+2025-08-18 16:47:34.025 | INFO     | backend.pomodoro_engine:set_vpet_name:276 - VPet name changed from Thundermon to Missimon
+2025-08-18 16:47:34.026 | INFO     | app.main_window:_on_digimon_changed:374 - Switched to Digimon: Missimon
+2025-08-18 16:47:36.675 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:47:37.277 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:47:37.348 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Hagurumon_penc/0.png
+2025-08-18 16:47:37.350 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Hagurumon_penc/1.png
+2025-08-18 16:47:37.352 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Hagurumon_penc/3.png
+2025-08-18 16:47:37.353 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Hagurumon_penc/6.png
+2025-08-18 16:47:37.355 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Hagurumon_penc/7.png
+2025-08-18 16:47:37.357 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Hagurumon_penc/11.png
+2025-08-18 16:47:37.358 | INFO     | backend.pomodoro_engine:set_vpet_name:276 - VPet name changed from Missimon to Hagurumon
+2025-08-18 16:47:37.358 | INFO     | app.main_window:_on_digimon_changed:374 - Switched to Digimon: Hagurumon
+2025-08-18 16:47:40.753 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Bommon_penc/0.png
+2025-08-18 16:47:40.755 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Bommon_penc/1.png
+2025-08-18 16:47:40.757 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Bommon_penc/3.png
+2025-08-18 16:47:40.759 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Bommon_penc/6.png
+2025-08-18 16:47:40.761 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Bommon_penc/7.png
+2025-08-18 16:47:40.763 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Bommon_penc/11.png
+2025-08-18 16:47:40.764 | INFO     | backend.pomodoro_engine:set_vpet_name:276 - VPet name changed from Hagurumon to Bommon
+2025-08-18 16:47:40.765 | INFO     | app.main_window:_on_digimon_changed:374 - Switched to Digimon: Bommon
+2025-08-18 16:47:40.886 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:48:07.967 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:48:11.576 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:48:17.895 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 16:48:19.098 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:48:23.911 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 16:48:25.115 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:48:41.660 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 16:48:42.863 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:48:52.789 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:48:56.399 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:49:02.716 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:49:06.326 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:49:36.709 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 16:49:39.116 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:49:42.728 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:49:46.336 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:49:57.763 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:50:01.371 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:50:03.777 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 16:50:04.980 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:50:23.922 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:50:27.530 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:50:35.047 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 16:50:36.250 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:50:42.262 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 16:50:43.465 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:51:00.901 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 16:51:03.306 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:51:20.744 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 16:51:23.149 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:51:31.569 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 16:51:33.974 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:51:44.797 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:51:48.405 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:51:52.915 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:51:56.522 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:51:57.725 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:52:01.332 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:52:03.436 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:52:07.044 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:52:22.077 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 16:52:23.279 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:52:23.580 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:52:27.188 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:52:31.396 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:52:35.004 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:52:36.507 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 16:52:37.710 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:52:41.919 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 16:52:44.324 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:52:44.925 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 16:52:46.128 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:53:05.984 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:53:09.595 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:53:14.231 | INFO     | app.main_window:_on_exit_clicked:323 - Exit button clicked - shutting down application
+2025-08-18 16:53:14.232 | INFO     | backend.vpet_engine:stop_animation:270 - VPet animation stopped
+2025-08-18 16:53:14.232 | INFO     | app.main_window:cleanup:475 - Application cleanup completed
+2025-08-18 16:53:14.292 | INFO     | backend.vpet_engine:stop_animation:270 - VPet animation stopped
+2025-08-18 16:53:14.293 | INFO     | app.main_window:cleanup:475 - Application cleanup completed
+2025-08-18 16:54:21.579 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/0.png
+2025-08-18 16:54:21.579 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/1.png
+2025-08-18 16:54:21.580 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/3.png
+2025-08-18 16:54:21.580 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/6.png
+2025-08-18 16:54:21.581 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/7.png
+2025-08-18 16:54:21.581 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/11.png
+2025-08-18 16:54:21.581 | INFO     | app.main_window:_extract_vpet_name_from_engine:107 - Extracted vpet name: Agumon
+2025-08-18 16:54:21.581 | INFO     | backend.time_logger:_load_sessions:309 - Loaded 4 existing sessions from data/work_sessions.json
+2025-08-18 16:54:21.582 | INFO     | backend.time_logger:__init__:47 - TimeLogger initialized with log file: data/work_sessions.json
+2025-08-18 16:54:21.664 | INFO     | app.main_window:create_gui_components:164 - GUI components created
+2025-08-18 16:54:21.665 | INFO     | app.main_window:_update_digimon_list:388 - Updated Digimon list: ['Agumon', 'Mokumon', 'DemiMeramon', 'Ghostmon', 'Wizardmon', 'Baalmon', 'Beelzemon (2010 Anime Version)', 'Bommon', 'Hagurumon', 'Missimon', 'Thundermon', 'Shootmon']
+2025-08-18 16:54:21.665 | INFO     | app.main_window:setup_callbacks:195 - Callbacks configured
+2025-08-18 16:54:21.666 | INFO     | backend.vpet_engine:start_animation:264 - VPet animation started
+2025-08-18 16:54:21.666 | INFO     | app.main_window:start_engines:205 - Engines started
+2025-08-18 16:54:21.666 | INFO     | app.main_window:__init__:88 - Main application initialized
+2025-08-18 16:54:21.666 | INFO     | app.main_window:run:455 - Starting application
+2025-08-18 16:54:28.382 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:54:29.099 | INFO     | backend.time_logger:start_work_session:74 - Work session started at 2025-08-18T16:54:29.099902 with Agumon
+2025-08-18 16:54:29.101 | INFO     | backend.pomodoro_engine:start:115 - Timer started: work mode, 1500s remaining
+2025-08-18 16:54:29.102 | INFO     | backend.vpet_engine:set_timer_running:297 - VPet notified: timer running = True
+2025-08-18 16:54:31.992 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:54:42.519 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 6 cycles (12 frames)
+2025-08-18 16:54:53.340 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 16:54:53.340 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:54:56.949 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:54:57.853 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 6 cycles (12 frames)
+2025-08-18 16:55:03.101 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Mokumon_penc/0.png
+2025-08-18 16:55:03.102 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Mokumon_penc/1.png
+2025-08-18 16:55:03.104 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Mokumon_penc/3.png
+2025-08-18 16:55:03.105 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Mokumon_penc/6.png
+2025-08-18 16:55:03.107 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Mokumon_penc/7.png
+2025-08-18 16:55:03.109 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Mokumon_penc/11.png
+2025-08-18 16:55:03.110 | INFO     | backend.pomodoro_engine:set_vpet_name:276 - VPet name changed from Agumon to Mokumon
+2025-08-18 16:55:03.110 | INFO     | app.main_window:_on_digimon_changed:374 - Switched to Digimon: Mokumon
+2025-08-18 16:55:08.676 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 16:55:08.676 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 16:55:11.082 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:55:12.285 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 9 cycles (18 frames)
+2025-08-18 16:55:12.412 | INFO     | backend.time_logger:stop_work_session:112 - Work session stopped (interrupted): 0.72 minutes
+2025-08-18 16:55:12.413 | INFO     | backend.time_logger:pause_work_session:129 - Work session paused
+2025-08-18 16:55:12.413 | INFO     | backend.pomodoro_engine:pause:135 - Timer paused: 1457s remaining
+2025-08-18 16:55:12.413 | INFO     | backend.vpet_engine:set_timer_running:297 - VPet notified: timer running = False
+2025-08-18 16:55:23.162 | INFO     | app.main_window:_on_exit_clicked:323 - Exit button clicked - shutting down application
+2025-08-18 16:55:23.163 | INFO     | backend.vpet_engine:stop_animation:270 - VPet animation stopped
+2025-08-18 16:55:23.163 | INFO     | app.main_window:cleanup:475 - Application cleanup completed
+2025-08-18 16:55:23.206 | INFO     | backend.vpet_engine:stop_animation:270 - VPet animation stopped
+2025-08-18 16:55:23.207 | INFO     | app.main_window:cleanup:475 - Application cleanup completed
+2025-08-18 16:55:36.015 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Agumon_penc/0.png
+2025-08-18 16:55:36.015 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Agumon_penc/1.png
+2025-08-18 16:55:36.016 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Agumon_penc/3.png
+2025-08-18 16:55:36.016 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Agumon_penc/6.png
+2025-08-18 16:55:36.016 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Agumon_penc/7.png
+2025-08-18 16:55:36.016 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Agumon_penc/11.png
+2025-08-18 16:55:36.017 | INFO     | backend.vpet_engine:_load_projectile_sprite:280 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 16:55:36.017 | INFO     | backend.vpet_engine:_load_projectile_sprite:280 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 16:55:36.017 | INFO     | app.main_window:_extract_vpet_name_from_engine:107 - Extracted vpet name: Agumon
+2025-08-18 16:55:36.017 | INFO     | backend.time_logger:_load_sessions:309 - Loaded 5 existing sessions from data/work_sessions.json
+2025-08-18 16:55:36.017 | INFO     | backend.time_logger:__init__:47 - TimeLogger initialized with log file: data/work_sessions.json
+2025-08-18 16:55:36.098 | INFO     | app.main_window:create_gui_components:164 - GUI components created
+2025-08-18 16:55:36.099 | INFO     | app.main_window:_update_digimon_list:398 - Updated Digimon list: ['Agumon', 'Mokumon', 'DemiMeramon', 'Ghostmon', 'Wizardmon', 'Baalmon', 'Beelzemon (2010 Anime Version)', 'Bommon', 'Hagurumon', 'Missimon', 'Thundermon', 'Shootmon']
+2025-08-18 16:55:36.099 | INFO     | app.main_window:setup_callbacks:195 - Callbacks configured
+2025-08-18 16:55:36.099 | INFO     | backend.vpet_engine:start_animation:305 - VPet animation started
+2025-08-18 16:55:36.099 | INFO     | app.main_window:start_engines:205 - Engines started
+2025-08-18 16:55:36.099 | INFO     | app.main_window:__init__:88 - Main application initialized
+2025-08-18 16:55:36.099 | INFO     | app.main_window:run:465 - Starting application
+2025-08-18 16:55:41.784 | INFO     | backend.time_logger:start_work_session:74 - Work session started at 2025-08-18T16:55:41.784220 with Agumon
+2025-08-18 16:55:41.785 | INFO     | backend.pomodoro_engine:start:115 - Timer started: work mode, 1500s remaining
+2025-08-18 16:55:41.786 | INFO     | backend.vpet_engine:set_timer_running:338 - VPet notified: timer running = True
+2025-08-18 16:55:45.821 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:55:49.430 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:55:50.032 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 7 cycles (14 frames)
+2025-08-18 16:56:02.663 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 16:56:02.664 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 16:56:03.866 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:56:05.494 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Mokumon_penc/0.png
+2025-08-18 16:56:05.497 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Mokumon_penc/1.png
+2025-08-18 16:56:05.498 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Mokumon_penc/3.png
+2025-08-18 16:56:05.499 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Mokumon_penc/6.png
+2025-08-18 16:56:05.501 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Mokumon_penc/7.png
+2025-08-18 16:56:05.502 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Mokumon_penc/11.png
+2025-08-18 16:56:05.504 | INFO     | backend.vpet_engine:_load_projectile_sprite:280 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 16:56:05.505 | INFO     | backend.vpet_engine:_load_projectile_sprite:280 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 16:56:05.505 | INFO     | backend.pomodoro_engine:set_vpet_name:276 - VPet name changed from Agumon to Mokumon
+2025-08-18 16:56:05.506 | INFO     | app.main_window:_on_digimon_changed:384 - Switched to Digimon: Mokumon
+2025-08-18 16:56:10.181 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:56:13.788 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:56:14.089 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 16:56:15.292 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:56:17.396 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 9 cycles (18 frames)
+2025-08-18 16:56:33.632 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 16:56:33.632 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 16:56:34.883 | INFO     | app.main_window:_on_exit_clicked:333 - Exit button clicked - shutting down application
+2025-08-18 16:56:34.883 | INFO     | backend.time_logger:cleanup_on_exit:293 - Application exiting with active work session - stopping session
+2025-08-18 16:56:34.884 | INFO     | backend.time_logger:stop_work_session:112 - Work session stopped (interrupted): 0.88 minutes
+2025-08-18 16:56:34.885 | INFO     | backend.vpet_engine:stop_animation:311 - VPet animation stopped
+2025-08-18 16:56:34.885 | INFO     | app.main_window:cleanup:485 - Application cleanup completed
+2025-08-18 16:56:34.937 | INFO     | backend.vpet_engine:stop_animation:311 - VPet animation stopped
+2025-08-18 16:56:34.938 | INFO     | app.main_window:cleanup:485 - Application cleanup completed
+2025-08-18 17:05:07.258 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Agumon_penc/0.png
+2025-08-18 17:05:07.259 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Agumon_penc/1.png
+2025-08-18 17:05:07.259 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Agumon_penc/3.png
+2025-08-18 17:05:07.259 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Agumon_penc/6.png
+2025-08-18 17:05:07.260 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Agumon_penc/7.png
+2025-08-18 17:05:07.260 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Agumon_penc/11.png
+2025-08-18 17:05:07.260 | INFO     | backend.vpet_engine:_load_projectile_sprite:280 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:05:07.261 | INFO     | backend.vpet_engine:_load_projectile_sprite:280 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:05:07.261 | INFO     | app.main_window:_extract_vpet_name_from_engine:107 - Extracted vpet name: Agumon
+2025-08-18 17:05:07.261 | INFO     | backend.time_logger:_load_sessions:309 - Loaded 6 existing sessions from data/work_sessions.json
+2025-08-18 17:05:07.261 | INFO     | backend.time_logger:__init__:47 - TimeLogger initialized with log file: data/work_sessions.json
+2025-08-18 17:05:07.346 | INFO     | app.main_window:create_gui_components:164 - GUI components created
+2025-08-18 17:05:07.346 | INFO     | app.main_window:_update_digimon_list:398 - Updated Digimon list: ['Agumon', 'Mokumon', 'DemiMeramon', 'Ghostmon', 'Wizardmon', 'Baalmon', 'Beelzemon (2010 Anime Version)', 'Bommon', 'Hagurumon', 'Missimon', 'Thundermon', 'Shootmon']
+2025-08-18 17:05:07.346 | INFO     | app.main_window:setup_callbacks:195 - Callbacks configured
+2025-08-18 17:05:07.347 | INFO     | backend.vpet_engine:start_animation:305 - VPet animation started
+2025-08-18 17:05:07.347 | INFO     | app.main_window:start_engines:205 - Engines started
+2025-08-18 17:05:07.347 | INFO     | app.main_window:__init__:88 - Main application initialized
+2025-08-18 17:05:07.347 | INFO     | app.main_window:run:465 - Starting application
+2025-08-18 17:05:23.158 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:05:23.819 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Baalmon_penc/0.png
+2025-08-18 17:05:23.820 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Baalmon_penc/1.png
+2025-08-18 17:05:23.822 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Baalmon_penc/3.png
+2025-08-18 17:05:23.824 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Baalmon_penc/6.png
+2025-08-18 17:05:23.827 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Baalmon_penc/7.png
+2025-08-18 17:05:23.830 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Baalmon_penc/11.png
+2025-08-18 17:05:23.831 | INFO     | backend.vpet_engine:_load_projectile_sprite:280 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:05:23.833 | INFO     | backend.vpet_engine:_load_projectile_sprite:280 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:05:23.834 | INFO     | backend.pomodoro_engine:set_vpet_name:276 - VPet name changed from Agumon to Baalmon
+2025-08-18 17:05:23.834 | INFO     | app.main_window:_on_digimon_changed:384 - Switched to Digimon: Baalmon
+2025-08-18 17:05:25.161 | INFO     | backend.time_logger:start_work_session:74 - Work session started at 2025-08-18T17:05:25.161585 with Baalmon
+2025-08-18 17:05:25.162 | INFO     | backend.pomodoro_engine:start:115 - Timer started: work mode, 1500s remaining
+2025-08-18 17:05:25.164 | INFO     | backend.vpet_engine:set_timer_running:338 - VPet notified: timer running = True
+2025-08-18 17:05:25.576 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:05:29.809 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 10 cycles (20 frames)
+2025-08-18 17:05:40.482 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Mokumon_penc/0.png
+2025-08-18 17:05:40.485 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Mokumon_penc/1.png
+2025-08-18 17:05:40.487 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Mokumon_penc/3.png
+2025-08-18 17:05:40.489 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Mokumon_penc/6.png
+2025-08-18 17:05:40.491 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Mokumon_penc/7.png
+2025-08-18 17:05:40.493 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Mokumon_penc/11.png
+2025-08-18 17:05:40.495 | INFO     | backend.vpet_engine:_load_projectile_sprite:280 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:05:40.498 | INFO     | backend.vpet_engine:_load_projectile_sprite:280 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:05:40.499 | INFO     | backend.pomodoro_engine:set_vpet_name:276 - VPet name changed from Baalmon to Mokumon
+2025-08-18 17:05:40.500 | INFO     | app.main_window:_on_digimon_changed:384 - Switched to Digimon: Mokumon
+2025-08-18 17:05:45.839 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Ghostmon_penc/0.png
+2025-08-18 17:05:45.841 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Ghostmon_penc/1.png
+2025-08-18 17:05:45.843 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Ghostmon_penc/3.png
+2025-08-18 17:05:45.845 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Ghostmon_penc/6.png
+2025-08-18 17:05:45.847 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Ghostmon_penc/7.png
+2025-08-18 17:05:45.849 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Ghostmon_penc/11.png
+2025-08-18 17:05:45.850 | INFO     | backend.vpet_engine:_load_projectile_sprite:280 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:05:45.852 | INFO     | backend.vpet_engine:_load_projectile_sprite:280 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:05:45.853 | INFO     | backend.pomodoro_engine:set_vpet_name:276 - VPet name changed from Mokumon to Ghostmon
+2025-08-18 17:05:45.853 | INFO     | app.main_window:_on_digimon_changed:384 - Switched to Digimon: Ghostmon
+2025-08-18 17:05:47.969 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:05:47.969 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:05:50.390 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:05:51.758 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Bommon_penc/0.png
+2025-08-18 17:05:51.759 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Bommon_penc/1.png
+2025-08-18 17:05:51.761 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Bommon_penc/3.png
+2025-08-18 17:05:51.763 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Bommon_penc/6.png
+2025-08-18 17:05:51.764 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Bommon_penc/7.png
+2025-08-18 17:05:51.766 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Bommon_penc/11.png
+2025-08-18 17:05:51.768 | INFO     | backend.vpet_engine:_load_projectile_sprite:280 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:05:51.769 | INFO     | backend.vpet_engine:_load_projectile_sprite:280 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:05:51.770 | INFO     | backend.pomodoro_engine:set_vpet_name:276 - VPet name changed from Ghostmon to Bommon
+2025-08-18 17:05:51.770 | INFO     | app.main_window:_on_digimon_changed:384 - Switched to Digimon: Bommon
+2025-08-18 17:05:54.015 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 10 cycles (20 frames)
+2025-08-18 17:06:12.169 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:06:12.170 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:06:14.600 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:06:18.540 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 8 cycles (16 frames)
+2025-08-18 17:06:26.517 | INFO     | app.main_window:run:469 - Application interrupted by user
+2025-08-18 17:06:26.517 | INFO     | backend.time_logger:cleanup_on_exit:293 - Application exiting with active work session - stopping session
+2025-08-18 17:06:26.519 | INFO     | backend.time_logger:stop_work_session:112 - Work session stopped (interrupted): 1.02 minutes
+2025-08-18 17:06:26.519 | INFO     | backend.vpet_engine:stop_animation:311 - VPet animation stopped
+2025-08-18 17:06:26.520 | INFO     | app.main_window:cleanup:485 - Application cleanup completed
+2025-08-18 17:10:09.586 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Agumon_penc/0.png
+2025-08-18 17:10:09.586 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Agumon_penc/1.png
+2025-08-18 17:10:09.586 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Agumon_penc/3.png
+2025-08-18 17:10:09.587 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Agumon_penc/6.png
+2025-08-18 17:10:09.587 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Agumon_penc/7.png
+2025-08-18 17:10:09.587 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Agumon_penc/11.png
+2025-08-18 17:10:09.588 | INFO     | backend.vpet_engine:_load_projectile_sprite:280 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:10:09.588 | INFO     | backend.vpet_engine:_load_projectile_sprite:280 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:10:09.588 | INFO     | app.main_window:_extract_vpet_name_from_engine:107 - Extracted vpet name: Agumon
+2025-08-18 17:10:09.588 | INFO     | backend.time_logger:_load_sessions:309 - Loaded 7 existing sessions from data/work_sessions.json
+2025-08-18 17:10:09.588 | INFO     | backend.time_logger:__init__:47 - TimeLogger initialized with log file: data/work_sessions.json
+2025-08-18 17:10:09.675 | INFO     | app.main_window:create_gui_components:164 - GUI components created
+2025-08-18 17:10:09.676 | INFO     | app.main_window:_update_digimon_list:398 - Updated Digimon list: ['Agumon', 'Mokumon', 'DemiMeramon', 'Ghostmon', 'Wizardmon', 'Baalmon', 'Beelzemon (2010 Anime Version)', 'Bommon', 'Hagurumon', 'Missimon', 'Thundermon', 'Shootmon']
+2025-08-18 17:10:09.676 | INFO     | app.main_window:setup_callbacks:195 - Callbacks configured
+2025-08-18 17:10:09.676 | INFO     | backend.vpet_engine:start_animation:305 - VPet animation started
+2025-08-18 17:10:09.676 | INFO     | app.main_window:start_engines:205 - Engines started
+2025-08-18 17:10:09.676 | INFO     | app.main_window:__init__:88 - Main application initialized
+2025-08-18 17:10:09.676 | INFO     | app.main_window:run:465 - Starting application
+2025-08-18 17:10:15.149 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Bommon_penc/0.png
+2025-08-18 17:10:15.151 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Bommon_penc/1.png
+2025-08-18 17:10:15.152 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Bommon_penc/3.png
+2025-08-18 17:10:15.154 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Bommon_penc/6.png
+2025-08-18 17:10:15.156 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Bommon_penc/7.png
+2025-08-18 17:10:15.157 | INFO     | backend.vpet_engine:_load_sprites_with_pil:221 - Loaded sprite: sprites/Bommon_penc/11.png
+2025-08-18 17:10:15.158 | INFO     | backend.vpet_engine:_load_projectile_sprite:280 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:10:15.160 | INFO     | backend.vpet_engine:_load_projectile_sprite:280 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:10:15.161 | INFO     | backend.pomodoro_engine:set_vpet_name:276 - VPet name changed from Agumon to Bommon
+2025-08-18 17:10:15.163 | INFO     | app.main_window:_on_digimon_changed:384 - Switched to Digimon: Bommon
+2025-08-18 17:10:16.474 | INFO     | backend.time_logger:start_work_session:74 - Work session started at 2025-08-18T17:10:16.474504 with Bommon
+2025-08-18 17:10:16.475 | INFO     | backend.pomodoro_engine:start:115 - Timer started: work mode, 1500s remaining
+2025-08-18 17:10:16.476 | INFO     | backend.vpet_engine:set_timer_running:338 - VPet notified: timer running = True
+2025-08-18 17:10:20.657 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 8 cycles (16 frames)
+2025-08-18 17:10:35.180 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:10:35.180 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 17:10:36.390 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:10:41.526 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:10:43.944 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:10:54.213 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:10:56.629 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:10:57.536 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:10:59.954 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:11:11.130 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 17:11:14.752 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:11:16.565 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 6 cycles (12 frames)
+2025-08-18 17:11:27.444 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:11:27.445 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 17:11:28.653 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:11:32.277 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 10 cycles (20 frames)
+2025-08-18 17:11:50.413 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:11:50.414 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 17:11:51.623 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:11:53.435 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 7 cycles (14 frames)
+2025-08-18 17:12:06.123 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:12:06.123 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:12:08.541 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:12:09.749 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 5 cycles (10 frames)
+2025-08-18 17:12:18.812 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:12:18.812 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 17:12:20.022 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:12:21.231 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:12:23.646 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:12:25.459 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 6 cycles (12 frames)
+2025-08-18 17:12:36.334 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:12:36.335 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 17:12:39.959 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:12:40.865 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 17:12:44.489 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:12:49.323 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 7 cycles (14 frames)
+2025-08-18 17:12:57.187 | INFO     | backend.time_logger:stop_work_session:112 - Work session stopped (interrupted): 2.68 minutes
+2025-08-18 17:12:57.188 | INFO     | backend.time_logger:pause_work_session:129 - Work session paused
+2025-08-18 17:12:57.188 | INFO     | backend.pomodoro_engine:pause:135 - Timer paused: 1340s remaining
+2025-08-18 17:12:57.189 | INFO     | backend.vpet_engine:set_timer_running:338 - VPet notified: timer running = False
+2025-08-18 17:13:02.018 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:13:02.018 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 17:13:03.228 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:13:04.737 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 17:13:08.359 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:13:21.651 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 17:13:22.861 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:13:25.277 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 17:13:28.902 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:13:30.110 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:13:32.525 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:13:40.547 | INFO     | backend.time_logger:start_work_session:74 - Work session started at 2025-08-18T17:13:40.547772 with Bommon
+2025-08-18 17:13:40.548 | INFO     | backend.pomodoro_engine:start:115 - Timer started: work mode, 1340s remaining
+2025-08-18 17:13:40.549 | INFO     | backend.vpet_engine:set_timer_running:338 - VPet notified: timer running = True
+2025-08-18 17:13:42.491 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 7 cycles (14 frames)
+2025-08-18 17:13:55.225 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:13:55.226 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:13:57.646 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:14:08.233 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:14:10.653 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:14:11.561 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 9 cycles (18 frames)
+2025-08-18 17:14:27.881 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:14:27.882 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:14:30.301 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:14:32.115 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:14:34.536 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:14:34.839 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 8 cycles (16 frames)
+2025-08-18 17:14:49.341 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:14:49.342 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:14:51.761 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:14:53.273 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 17:14:54.483 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:14:59.320 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 6 cycles (12 frames)
+2025-08-18 17:15:10.205 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:15:10.206 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:15:12.626 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:15:13.836 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 9 cycles (18 frames)
+2025-08-18 17:15:30.155 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:15:30.156 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:15:32.579 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:15:33.183 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 9 cycles (18 frames)
+2025-08-18 17:15:49.499 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:15:49.500 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 17:15:53.128 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:15:55.850 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 10 cycles (20 frames)
+2025-08-18 17:16:14.029 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:16:14.029 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:16:16.459 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:16:17.370 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 17:16:21.003 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:16:22.820 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 17:16:24.031 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:16:24.641 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 7 cycles (14 frames)
+2025-08-18 17:16:37.355 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:16:37.356 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:16:39.772 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:16:40.984 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 10 cycles (20 frames)
+2025-08-18 17:16:59.132 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:16:59.132 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 17:17:02.760 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:17:05.179 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 9 cycles (18 frames)
+2025-08-18 17:17:21.511 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:17:21.512 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 17:17:22.720 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:17:24.229 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 8 cycles (16 frames)
+2025-08-18 17:17:38.714 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:17:38.714 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:17:41.122 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:17:43.529 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 10 cycles (20 frames)
+2025-08-18 17:18:01.611 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:18:01.612 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:18:04.028 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:18:10.371 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 9 cycles (18 frames)
+2025-08-18 17:18:26.687 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:18:26.687 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 17:18:30.312 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:18:30.615 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:18:33.034 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:18:43.906 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 5 cycles (10 frames)
+2025-08-18 17:18:52.973 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:18:52.974 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 17:18:56.599 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:18:58.108 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 17:19:01.734 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:19:04.152 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 6 cycles (12 frames)
+2025-08-18 17:19:15.030 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:19:15.030 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:19:17.447 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:19:21.679 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 17:19:22.890 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:19:23.192 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 5 cycles (10 frames)
+2025-08-18 17:19:32.256 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:19:32.257 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 17:19:33.469 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:19:34.677 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 9 cycles (18 frames)
+2025-08-18 17:19:50.999 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:19:50.999 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 17:19:54.624 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:20:01.878 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 7 cycles (14 frames)
+2025-08-18 17:20:14.586 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:20:14.586 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:20:17.005 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:20:18.520 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 17:20:19.730 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:20:21.242 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 17:20:22.451 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:20:22.754 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 10 cycles (20 frames)
+2025-08-18 17:20:40.956 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:20:40.960 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:20:43.396 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:20:46.440 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 17:20:50.065 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:20:54.905 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 5 cycles (10 frames)
+2025-08-18 17:21:03.974 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:21:03.975 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 17:21:05.184 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:21:11.229 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 6 cycles (12 frames)
+2025-08-18 17:21:22.107 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:21:22.108 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 17:21:25.740 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:21:29.077 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 5 cycles (10 frames)
+2025-08-18 17:21:38.135 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:21:38.136 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 17:21:39.343 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:21:41.757 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 10 cycles (20 frames)
+2025-08-18 17:21:46.836 | INFO     | backend.time_logger:stop_work_session:112 - Work session stopped (interrupted): 8.1 minutes
+2025-08-18 17:21:46.836 | INFO     | backend.time_logger:pause_work_session:129 - Work session paused
+2025-08-18 17:21:46.837 | INFO     | backend.pomodoro_engine:pause:135 - Timer paused: 855s remaining
+2025-08-18 17:21:46.837 | INFO     | backend.vpet_engine:set_timer_running:338 - VPet notified: timer running = False
+2025-08-18 17:21:47.818 | INFO     | backend.pomodoro_engine:reset:162 - Timer reset
+2025-08-18 17:21:47.819 | INFO     | backend.vpet_engine:set_mode:326 - VPet mode switch: forcibly ending active event, resuming normal behavior
+2025-08-18 17:21:47.820 | INFO     | backend.vpet_engine:set_mode:330 - VPet mode set to: work
+2025-08-18 17:21:47.820 | INFO     | backend.vpet_engine:set_timer_running:338 - VPet notified: timer running = False
+2025-08-18 17:21:49.737 | INFO     | app.main_window:_on_exit_clicked:333 - Exit button clicked - shutting down application
+2025-08-18 17:21:49.737 | INFO     | backend.vpet_engine:stop_animation:311 - VPet animation stopped
+2025-08-18 17:21:49.738 | INFO     | app.main_window:cleanup:485 - Application cleanup completed
+2025-08-18 17:21:49.786 | INFO     | backend.vpet_engine:stop_animation:311 - VPet animation stopped
+2025-08-18 17:21:49.787 | INFO     | app.main_window:cleanup:485 - Application cleanup completed
+2025-08-18 17:22:06.120 | INFO     | backend.vpet_engine:_load_sprites_with_pil:222 - Loaded sprite: sprites/Agumon_penc/0.png
+2025-08-18 17:22:06.120 | INFO     | backend.vpet_engine:_load_sprites_with_pil:222 - Loaded sprite: sprites/Agumon_penc/1.png
+2025-08-18 17:22:06.120 | INFO     | backend.vpet_engine:_load_sprites_with_pil:222 - Loaded sprite: sprites/Agumon_penc/3.png
+2025-08-18 17:22:06.121 | INFO     | backend.vpet_engine:_load_sprites_with_pil:222 - Loaded sprite: sprites/Agumon_penc/6.png
+2025-08-18 17:22:06.121 | INFO     | backend.vpet_engine:_load_sprites_with_pil:222 - Loaded sprite: sprites/Agumon_penc/7.png
+2025-08-18 17:22:06.121 | INFO     | backend.vpet_engine:_load_sprites_with_pil:222 - Loaded sprite: sprites/Agumon_penc/11.png
+2025-08-18 17:22:06.122 | INFO     | backend.vpet_engine:_load_projectile_sprite:281 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:22:06.122 | INFO     | backend.vpet_engine:_load_projectile_sprite:281 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:22:06.122 | INFO     | app.main_window:_extract_vpet_name_from_engine:107 - Extracted vpet name: Agumon
+2025-08-18 17:22:06.122 | INFO     | backend.time_logger:_load_sessions:309 - Loaded 9 existing sessions from data/work_sessions.json
+2025-08-18 17:22:06.122 | INFO     | backend.time_logger:__init__:47 - TimeLogger initialized with log file: data/work_sessions.json
+2025-08-18 17:22:06.204 | INFO     | app.main_window:create_gui_components:164 - GUI components created
+2025-08-18 17:22:06.204 | INFO     | app.main_window:_update_digimon_list:398 - Updated Digimon list: ['Agumon', 'Mokumon', 'DemiMeramon', 'Ghostmon', 'Wizardmon', 'Baalmon', 'Beelzemon (2010 Anime Version)', 'Bommon', 'Hagurumon', 'Missimon', 'Thundermon', 'Shootmon']
+2025-08-18 17:22:06.204 | INFO     | app.main_window:setup_callbacks:195 - Callbacks configured
+2025-08-18 17:22:06.205 | INFO     | backend.vpet_engine:start_animation:306 - VPet animation started
+2025-08-18 17:22:06.205 | INFO     | app.main_window:start_engines:205 - Engines started
+2025-08-18 17:22:06.205 | INFO     | app.main_window:__init__:88 - Main application initialized
+2025-08-18 17:22:06.205 | INFO     | app.main_window:run:465 - Starting application
+2025-08-18 17:22:07.986 | INFO     | backend.time_logger:start_work_session:74 - Work session started at 2025-08-18T17:22:07.986482 with Agumon
+2025-08-18 17:22:07.987 | INFO     | backend.pomodoro_engine:start:115 - Timer started: work mode, 1500s remaining
+2025-08-18 17:22:07.988 | INFO     | backend.vpet_engine:set_timer_running:339 - VPet notified: timer running = True
+2025-08-18 17:22:09.022 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 10 cycles (20 frames)
+2025-08-18 17:22:13.930 | INFO     | backend.vpet_engine:_load_sprites_with_pil:222 - Loaded sprite: sprites/Mokumon_penc/0.png
+2025-08-18 17:22:13.933 | INFO     | backend.vpet_engine:_load_sprites_with_pil:222 - Loaded sprite: sprites/Mokumon_penc/1.png
+2025-08-18 17:22:13.936 | INFO     | backend.vpet_engine:_load_sprites_with_pil:222 - Loaded sprite: sprites/Mokumon_penc/3.png
+2025-08-18 17:22:13.937 | INFO     | backend.vpet_engine:_load_sprites_with_pil:222 - Loaded sprite: sprites/Mokumon_penc/6.png
+2025-08-18 17:22:13.939 | INFO     | backend.vpet_engine:_load_sprites_with_pil:222 - Loaded sprite: sprites/Mokumon_penc/7.png
+2025-08-18 17:22:13.941 | INFO     | backend.vpet_engine:_load_sprites_with_pil:222 - Loaded sprite: sprites/Mokumon_penc/11.png
+2025-08-18 17:22:13.945 | INFO     | backend.vpet_engine:_load_projectile_sprite:281 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:22:13.947 | INFO     | backend.vpet_engine:_load_projectile_sprite:281 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:22:13.949 | INFO     | backend.pomodoro_engine:set_vpet_name:276 - VPet name changed from Agumon to Mokumon
+2025-08-18 17:22:13.951 | INFO     | app.main_window:_on_digimon_changed:384 - Switched to Digimon: Mokumon
+2025-08-18 17:22:26.669 | INFO     | backend.vpet_engine:_load_sprites_with_pil:222 - Loaded sprite: sprites/Ghostmon_penc/0.png
+2025-08-18 17:22:26.671 | INFO     | backend.vpet_engine:_load_sprites_with_pil:222 - Loaded sprite: sprites/Ghostmon_penc/1.png
+2025-08-18 17:22:26.673 | INFO     | backend.vpet_engine:_load_sprites_with_pil:222 - Loaded sprite: sprites/Ghostmon_penc/3.png
+2025-08-18 17:22:26.675 | INFO     | backend.vpet_engine:_load_sprites_with_pil:222 - Loaded sprite: sprites/Ghostmon_penc/6.png
+2025-08-18 17:22:26.676 | INFO     | backend.vpet_engine:_load_sprites_with_pil:222 - Loaded sprite: sprites/Ghostmon_penc/7.png
+2025-08-18 17:22:26.678 | INFO     | backend.vpet_engine:_load_sprites_with_pil:222 - Loaded sprite: sprites/Ghostmon_penc/11.png
+2025-08-18 17:22:26.679 | INFO     | backend.vpet_engine:_load_projectile_sprite:281 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:22:26.681 | INFO     | backend.vpet_engine:_load_projectile_sprite:281 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:22:26.681 | INFO     | backend.pomodoro_engine:set_vpet_name:276 - VPet name changed from Mokumon to Ghostmon
+2025-08-18 17:22:26.682 | INFO     | app.main_window:_on_digimon_changed:384 - Switched to Digimon: Ghostmon
+2025-08-18 17:22:27.167 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:22:27.168 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:22:29.585 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:22:30.045 | INFO     | app.main_window:_on_exit_clicked:333 - Exit button clicked - shutting down application
+2025-08-18 17:22:30.046 | INFO     | backend.time_logger:cleanup_on_exit:293 - Application exiting with active work session - stopping session
+2025-08-18 17:22:30.047 | INFO     | backend.time_logger:stop_work_session:112 - Work session stopped (interrupted): 0.37 minutes
+2025-08-18 17:22:30.048 | INFO     | backend.vpet_engine:stop_animation:312 - VPet animation stopped
+2025-08-18 17:22:30.048 | INFO     | app.main_window:cleanup:485 - Application cleanup completed
+2025-08-18 17:22:30.095 | INFO     | backend.vpet_engine:stop_animation:312 - VPet animation stopped
+2025-08-18 17:22:30.097 | INFO     | app.main_window:cleanup:485 - Application cleanup completed
+2025-08-18 17:25:16.051 | INFO     | backend.vpet_engine:_load_sprites_with_pil:222 - Loaded sprite: sprites/Agumon_penc/0.png
+2025-08-18 17:25:16.052 | INFO     | backend.vpet_engine:_load_sprites_with_pil:222 - Loaded sprite: sprites/Agumon_penc/1.png
+2025-08-18 17:25:16.053 | INFO     | backend.vpet_engine:_load_sprites_with_pil:222 - Loaded sprite: sprites/Agumon_penc/3.png
+2025-08-18 17:25:16.053 | INFO     | backend.vpet_engine:_load_sprites_with_pil:222 - Loaded sprite: sprites/Agumon_penc/6.png
+2025-08-18 17:25:16.054 | INFO     | backend.vpet_engine:_load_sprites_with_pil:222 - Loaded sprite: sprites/Agumon_penc/7.png
+2025-08-18 17:25:16.054 | INFO     | backend.vpet_engine:_load_sprites_with_pil:222 - Loaded sprite: sprites/Agumon_penc/11.png
+2025-08-18 17:25:16.054 | INFO     | backend.vpet_engine:_load_projectile_sprite:281 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:25:16.055 | INFO     | backend.vpet_engine:_load_projectile_sprite:281 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:25:16.055 | INFO     | app.main_window:_extract_vpet_name_from_engine:107 - Extracted vpet name: Agumon
+2025-08-18 17:25:16.055 | INFO     | backend.time_logger:_load_sessions:309 - Loaded 10 existing sessions from data/work_sessions.json
+2025-08-18 17:25:16.055 | INFO     | backend.time_logger:__init__:47 - TimeLogger initialized with log file: data/work_sessions.json
+2025-08-18 17:25:16.150 | INFO     | app.main_window:create_gui_components:164 - GUI components created
+2025-08-18 17:25:16.151 | INFO     | app.main_window:_update_digimon_list:398 - Updated Digimon list: ['Agumon', 'Mokumon', 'DemiMeramon', 'Ghostmon', 'Wizardmon', 'Baalmon', 'Beelzemon (2010 Anime Version)', 'Bommon', 'Hagurumon', 'Missimon', 'Thundermon', 'Shootmon']
+2025-08-18 17:25:16.151 | INFO     | app.main_window:setup_callbacks:195 - Callbacks configured
+2025-08-18 17:25:16.151 | INFO     | backend.vpet_engine:start_animation:306 - VPet animation started
+2025-08-18 17:25:16.152 | INFO     | app.main_window:start_engines:205 - Engines started
+2025-08-18 17:25:16.152 | INFO     | app.main_window:__init__:88 - Main application initialized
+2025-08-18 17:25:16.152 | INFO     | app.main_window:run:465 - Starting application
+2025-08-18 17:25:18.567 | INFO     | backend.time_logger:start_work_session:74 - Work session started at 2025-08-18T17:25:18.567719 with Agumon
+2025-08-18 17:25:18.569 | INFO     | backend.pomodoro_engine:start:115 - Timer started: work mode, 1500s remaining
+2025-08-18 17:25:18.570 | INFO     | backend.vpet_engine:set_timer_running:339 - VPet notified: timer running = True
+2025-08-18 17:25:19.578 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:25:21.997 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:25:23.811 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 10 cycles (20 frames)
+2025-08-18 17:25:30.443 | INFO     | backend.time_logger:stop_work_session:112 - Work session stopped (interrupted): 0.2 minutes
+2025-08-18 17:25:30.444 | INFO     | backend.time_logger:pause_work_session:129 - Work session paused
+2025-08-18 17:25:30.444 | INFO     | backend.pomodoro_engine:pause:135 - Timer paused: 1489s remaining
+2025-08-18 17:25:30.445 | INFO     | backend.vpet_engine:set_timer_running:339 - VPet notified: timer running = False
+2025-08-18 17:25:31.846 | INFO     | app.main_window:_on_exit_clicked:333 - Exit button clicked - shutting down application
+2025-08-18 17:25:31.847 | INFO     | backend.vpet_engine:stop_animation:312 - VPet animation stopped
+2025-08-18 17:25:31.847 | INFO     | app.main_window:cleanup:485 - Application cleanup completed
+2025-08-18 17:25:31.898 | INFO     | backend.vpet_engine:stop_animation:312 - VPet animation stopped
+2025-08-18 17:25:31.900 | INFO     | app.main_window:cleanup:485 - Application cleanup completed
+2025-08-18 17:25:51.886 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/0.png
+2025-08-18 17:25:51.886 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/1.png
+2025-08-18 17:25:51.886 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/3.png
+2025-08-18 17:25:51.887 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/6.png
+2025-08-18 17:25:51.887 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/7.png
+2025-08-18 17:25:51.887 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/11.png
+2025-08-18 17:25:51.888 | INFO     | backend.vpet_engine:_load_projectile_sprite:271 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:25:51.888 | INFO     | backend.vpet_engine:_load_projectile_sprite:271 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:25:51.888 | INFO     | app.main_window:_extract_vpet_name_from_engine:107 - Extracted vpet name: Agumon
+2025-08-18 17:25:51.888 | INFO     | backend.time_logger:_load_sessions:309 - Loaded 11 existing sessions from data/work_sessions.json
+2025-08-18 17:25:51.888 | INFO     | backend.time_logger:__init__:47 - TimeLogger initialized with log file: data/work_sessions.json
+2025-08-18 17:25:51.976 | INFO     | app.main_window:create_gui_components:164 - GUI components created
+2025-08-18 17:25:51.976 | INFO     | app.main_window:_update_digimon_list:398 - Updated Digimon list: ['Agumon', 'Mokumon', 'DemiMeramon', 'Ghostmon', 'Wizardmon', 'Baalmon', 'Beelzemon (2010 Anime Version)', 'Bommon', 'Hagurumon', 'Missimon', 'Thundermon', 'Shootmon']
+2025-08-18 17:25:51.976 | INFO     | app.main_window:setup_callbacks:195 - Callbacks configured
+2025-08-18 17:25:51.977 | INFO     | backend.vpet_engine:start_animation:296 - VPet animation started
+2025-08-18 17:25:51.977 | INFO     | app.main_window:start_engines:205 - Engines started
+2025-08-18 17:25:51.977 | INFO     | app.main_window:__init__:88 - Main application initialized
+2025-08-18 17:25:51.977 | INFO     | app.main_window:run:465 - Starting application
+2025-08-18 17:25:53.593 | INFO     | backend.time_logger:start_work_session:74 - Work session started at 2025-08-18T17:25:53.593210 with Agumon
+2025-08-18 17:25:53.594 | INFO     | backend.pomodoro_engine:start:115 - Timer started: work mode, 1500s remaining
+2025-08-18 17:25:53.595 | INFO     | backend.vpet_engine:set_timer_running:329 - VPet notified: timer running = True
+2025-08-18 17:25:55.097 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 10 cycles (20 frames)
+2025-08-18 17:25:59.059 | INFO     | app.main_window:_on_exit_clicked:333 - Exit button clicked - shutting down application
+2025-08-18 17:25:59.060 | INFO     | backend.time_logger:cleanup_on_exit:293 - Application exiting with active work session - stopping session
+2025-08-18 17:25:59.062 | INFO     | backend.time_logger:stop_work_session:112 - Work session stopped (interrupted): 0.09 minutes
+2025-08-18 17:25:59.062 | INFO     | backend.vpet_engine:stop_animation:302 - VPet animation stopped
+2025-08-18 17:25:59.063 | INFO     | app.main_window:cleanup:485 - Application cleanup completed
+2025-08-18 17:25:59.121 | INFO     | backend.vpet_engine:stop_animation:302 - VPet animation stopped
+2025-08-18 17:25:59.123 | INFO     | app.main_window:cleanup:485 - Application cleanup completed
+2025-08-18 17:26:36.782 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/0.png
+2025-08-18 17:26:36.783 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/1.png
+2025-08-18 17:26:36.783 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/3.png
+2025-08-18 17:26:36.784 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/6.png
+2025-08-18 17:26:36.784 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/7.png
+2025-08-18 17:26:36.784 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/11.png
+2025-08-18 17:26:36.785 | INFO     | backend.vpet_engine:_load_projectile_sprite:271 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:26:36.785 | INFO     | backend.vpet_engine:_load_projectile_sprite:271 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:26:36.785 | INFO     | app.main_window:_extract_vpet_name_from_engine:107 - Extracted vpet name: Agumon
+2025-08-18 17:26:36.785 | INFO     | backend.time_logger:_load_sessions:309 - Loaded 12 existing sessions from data/work_sessions.json
+2025-08-18 17:26:36.785 | INFO     | backend.time_logger:__init__:47 - TimeLogger initialized with log file: data/work_sessions.json
+2025-08-18 17:26:36.874 | INFO     | app.main_window:create_gui_components:164 - GUI components created
+2025-08-18 17:26:36.875 | INFO     | app.main_window:_update_digimon_list:398 - Updated Digimon list: ['Agumon', 'Mokumon', 'DemiMeramon', 'Ghostmon', 'Wizardmon', 'Baalmon', 'Beelzemon (2010 Anime Version)', 'Bommon', 'Hagurumon', 'Missimon', 'Thundermon', 'Shootmon']
+2025-08-18 17:26:36.875 | INFO     | app.main_window:setup_callbacks:195 - Callbacks configured
+2025-08-18 17:26:36.876 | INFO     | backend.vpet_engine:start_animation:296 - VPet animation started
+2025-08-18 17:26:36.876 | INFO     | app.main_window:start_engines:205 - Engines started
+2025-08-18 17:26:36.876 | INFO     | app.main_window:__init__:88 - Main application initialized
+2025-08-18 17:26:36.876 | INFO     | app.main_window:run:465 - Starting application
+2025-08-18 17:26:39.085 | INFO     | backend.time_logger:start_work_session:74 - Work session started at 2025-08-18T17:26:39.085306 with Agumon
+2025-08-18 17:26:39.086 | INFO     | backend.pomodoro_engine:start:115 - Timer started: work mode, 1500s remaining
+2025-08-18 17:26:39.088 | INFO     | backend.vpet_engine:set_timer_running:329 - VPet notified: timer running = True
+2025-08-18 17:26:40.903 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 7 cycles (14 frames)
+2025-08-18 17:26:45.004 | INFO     | app.main_window:_on_exit_clicked:333 - Exit button clicked - shutting down application
+2025-08-18 17:26:45.004 | INFO     | backend.time_logger:cleanup_on_exit:293 - Application exiting with active work session - stopping session
+2025-08-18 17:26:45.006 | INFO     | backend.time_logger:stop_work_session:112 - Work session stopped (interrupted): 0.1 minutes
+2025-08-18 17:26:45.006 | INFO     | backend.vpet_engine:stop_animation:302 - VPet animation stopped
+2025-08-18 17:26:45.007 | INFO     | app.main_window:cleanup:485 - Application cleanup completed
+2025-08-18 17:26:45.047 | INFO     | backend.vpet_engine:stop_animation:302 - VPet animation stopped
+2025-08-18 17:26:45.048 | INFO     | app.main_window:cleanup:485 - Application cleanup completed
+2025-08-18 17:27:11.501 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/0.png
+2025-08-18 17:27:11.502 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/1.png
+2025-08-18 17:27:11.502 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/3.png
+2025-08-18 17:27:11.502 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/6.png
+2025-08-18 17:27:11.503 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/7.png
+2025-08-18 17:27:11.503 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/11.png
+2025-08-18 17:27:11.503 | INFO     | backend.vpet_engine:_load_projectile_sprite:271 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:27:11.503 | INFO     | backend.vpet_engine:_load_projectile_sprite:271 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:27:11.503 | INFO     | app.main_window:_extract_vpet_name_from_engine:107 - Extracted vpet name: Agumon
+2025-08-18 17:27:11.504 | INFO     | backend.time_logger:_load_sessions:309 - Loaded 13 existing sessions from data/work_sessions.json
+2025-08-18 17:27:11.504 | INFO     | backend.time_logger:__init__:47 - TimeLogger initialized with log file: data/work_sessions.json
+2025-08-18 17:27:11.589 | INFO     | app.main_window:create_gui_components:164 - GUI components created
+2025-08-18 17:27:11.590 | INFO     | app.main_window:_update_digimon_list:398 - Updated Digimon list: ['Agumon', 'Mokumon', 'DemiMeramon', 'Ghostmon', 'Wizardmon', 'Baalmon', 'Beelzemon (2010 Anime Version)', 'Bommon', 'Hagurumon', 'Missimon', 'Thundermon', 'Shootmon']
+2025-08-18 17:27:11.590 | INFO     | app.main_window:setup_callbacks:195 - Callbacks configured
+2025-08-18 17:27:11.590 | INFO     | backend.vpet_engine:start_animation:296 - VPet animation started
+2025-08-18 17:27:11.591 | INFO     | app.main_window:start_engines:205 - Engines started
+2025-08-18 17:27:11.591 | INFO     | app.main_window:__init__:88 - Main application initialized
+2025-08-18 17:27:11.591 | INFO     | app.main_window:run:465 - Starting application
+2025-08-18 17:27:13.126 | INFO     | backend.time_logger:start_work_session:74 - Work session started at 2025-08-18T17:27:13.126800 with Agumon
+2025-08-18 17:27:13.127 | INFO     | backend.pomodoro_engine:start:115 - Timer started: work mode, 1500s remaining
+2025-08-18 17:27:13.129 | INFO     | backend.vpet_engine:set_timer_running:329 - VPet notified: timer running = True
+2025-08-18 17:27:13.201 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 9 cycles (18 frames)
+2025-08-18 17:27:19.766 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Mokumon_penc/0.png
+2025-08-18 17:27:19.768 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Mokumon_penc/1.png
+2025-08-18 17:27:19.770 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Mokumon_penc/3.png
+2025-08-18 17:27:19.772 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Mokumon_penc/6.png
+2025-08-18 17:27:19.773 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Mokumon_penc/7.png
+2025-08-18 17:27:19.775 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Mokumon_penc/11.png
+2025-08-18 17:27:19.776 | INFO     | backend.vpet_engine:_load_projectile_sprite:271 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:27:19.778 | INFO     | backend.vpet_engine:_load_projectile_sprite:271 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:27:19.778 | INFO     | backend.pomodoro_engine:set_vpet_name:276 - VPet name changed from Agumon to Mokumon
+2025-08-18 17:27:19.778 | INFO     | app.main_window:_on_digimon_changed:384 - Switched to Digimon: Mokumon
+2025-08-18 17:27:29.523 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:27:29.523 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:27:31.942 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:27:32.850 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 17:27:36.474 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:27:40.704 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 7 cycles (14 frames)
+2025-08-18 17:27:53.396 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:27:53.397 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 17:27:57.025 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:28:03.067 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 17:28:04.277 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:28:06.393 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 5 cycles (10 frames)
+2025-08-18 17:28:12.349 | INFO     | app.main_window:_on_exit_clicked:333 - Exit button clicked - shutting down application
+2025-08-18 17:28:12.350 | INFO     | backend.time_logger:cleanup_on_exit:293 - Application exiting with active work session - stopping session
+2025-08-18 17:28:12.351 | INFO     | backend.time_logger:stop_work_session:112 - Work session stopped (interrupted): 0.99 minutes
+2025-08-18 17:28:12.352 | INFO     | backend.vpet_engine:stop_animation:302 - VPet animation stopped
+2025-08-18 17:28:12.352 | INFO     | app.main_window:cleanup:485 - Application cleanup completed
+2025-08-18 17:28:12.390 | INFO     | backend.vpet_engine:stop_animation:302 - VPet animation stopped
+2025-08-18 17:28:12.392 | INFO     | app.main_window:cleanup:485 - Application cleanup completed
+2025-08-18 17:39:13.053 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/0.png
+2025-08-18 17:39:13.053 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/1.png
+2025-08-18 17:39:13.053 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/3.png
+2025-08-18 17:39:13.054 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/6.png
+2025-08-18 17:39:13.054 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/7.png
+2025-08-18 17:39:13.054 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/11.png
+2025-08-18 17:39:13.055 | INFO     | backend.vpet_engine:_load_projectile_sprite:271 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:39:13.055 | INFO     | backend.vpet_engine:_load_projectile_sprite:271 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:39:13.055 | INFO     | app.main_window:_extract_vpet_name_from_engine:107 - Extracted vpet name: Agumon
+2025-08-18 17:39:13.055 | INFO     | backend.time_logger:_load_sessions:309 - Loaded 14 existing sessions from data/work_sessions.json
+2025-08-18 17:39:13.055 | INFO     | backend.time_logger:__init__:47 - TimeLogger initialized with log file: data/work_sessions.json
+2025-08-18 17:39:13.140 | INFO     | app.main_window:create_gui_components:164 - GUI components created
+2025-08-18 17:39:13.141 | INFO     | app.main_window:_update_digimon_list:398 - Updated Digimon list: ['Agumon', 'Mokumon', 'DemiMeramon', 'Ghostmon', 'Wizardmon', 'Baalmon', 'Beelzemon (2010 Anime Version)', 'Bommon', 'Hagurumon', 'Missimon', 'Thundermon', 'Shootmon']
+2025-08-18 17:39:13.141 | INFO     | app.main_window:setup_callbacks:195 - Callbacks configured
+2025-08-18 17:39:13.141 | INFO     | backend.vpet_engine:start_animation:296 - VPet animation started
+2025-08-18 17:39:13.141 | INFO     | app.main_window:start_engines:205 - Engines started
+2025-08-18 17:39:13.142 | INFO     | app.main_window:__init__:88 - Main application initialized
+2025-08-18 17:39:13.142 | INFO     | app.main_window:run:465 - Starting application
+2025-08-18 17:39:15.323 | INFO     | backend.time_logger:start_work_session:74 - Work session started at 2025-08-18T17:39:15.323526 with Agumon
+2025-08-18 17:39:15.324 | INFO     | backend.pomodoro_engine:start:115 - Timer started: work mode, 1500s remaining
+2025-08-18 17:39:15.325 | INFO     | backend.vpet_engine:set_timer_running:329 - VPet notified: timer running = True
+2025-08-18 17:39:16.563 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 7 cycles (14 frames)
+2025-08-18 17:39:26.869 | INFO     | backend.time_logger:stop_work_session:112 - Work session stopped (interrupted): 0.19 minutes
+2025-08-18 17:39:26.870 | INFO     | backend.time_logger:pause_work_session:129 - Work session paused
+2025-08-18 17:39:26.870 | INFO     | backend.pomodoro_engine:pause:135 - Timer paused: 1489s remaining
+2025-08-18 17:39:26.871 | INFO     | backend.vpet_engine:set_timer_running:329 - VPet notified: timer running = False
+2025-08-18 17:39:29.253 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:39:29.254 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 17:39:32.879 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:39:33.484 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 17:39:34.697 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:39:43.749 | INFO     | backend.time_logger:start_work_session:74 - Work session started at 2025-08-18T17:39:43.749378 with Agumon
+2025-08-18 17:39:43.752 | INFO     | backend.pomodoro_engine:start:115 - Timer started: work mode, 1489s remaining
+2025-08-18 17:39:43.754 | INFO     | backend.vpet_engine:set_timer_running:329 - VPet notified: timer running = True
+2025-08-18 17:39:44.983 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 10 cycles (20 frames)
+2025-08-18 17:39:48.191 | INFO     | app.main_window:_on_exit_clicked:333 - Exit button clicked - shutting down application
+2025-08-18 17:39:48.191 | INFO     | backend.time_logger:cleanup_on_exit:293 - Application exiting with active work session - stopping session
+2025-08-18 17:39:48.194 | INFO     | backend.time_logger:stop_work_session:112 - Work session stopped (interrupted): 0.07 minutes
+2025-08-18 17:39:48.194 | INFO     | backend.vpet_engine:stop_animation:302 - VPet animation stopped
+2025-08-18 17:39:48.195 | INFO     | app.main_window:cleanup:485 - Application cleanup completed
+2025-08-18 17:39:48.239 | INFO     | backend.vpet_engine:stop_animation:302 - VPet animation stopped
+2025-08-18 17:39:48.239 | INFO     | app.main_window:cleanup:485 - Application cleanup completed
+2025-08-18 17:41:02.309 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/0.png
+2025-08-18 17:41:02.310 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/1.png
+2025-08-18 17:41:02.310 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/3.png
+2025-08-18 17:41:02.310 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/6.png
+2025-08-18 17:41:02.311 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/7.png
+2025-08-18 17:41:02.311 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/11.png
+2025-08-18 17:41:02.311 | INFO     | backend.vpet_engine:_load_projectile_sprite:271 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:41:02.311 | INFO     | backend.vpet_engine:_load_projectile_sprite:271 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:41:02.312 | INFO     | app.main_window:_extract_vpet_name_from_engine:107 - Extracted vpet name: Agumon
+2025-08-18 17:41:02.312 | INFO     | backend.time_logger:_load_sessions:309 - Loaded 16 existing sessions from data/work_sessions.json
+2025-08-18 17:41:02.312 | INFO     | backend.time_logger:__init__:47 - TimeLogger initialized with log file: data/work_sessions.json
+2025-08-18 17:41:02.396 | INFO     | app.main_window:create_gui_components:164 - GUI components created
+2025-08-18 17:41:02.396 | INFO     | app.main_window:_update_digimon_list:398 - Updated Digimon list: ['Agumon', 'Mokumon', 'DemiMeramon', 'Ghostmon', 'Wizardmon', 'Baalmon', 'Beelzemon (2010 Anime Version)', 'Bommon', 'Hagurumon', 'Missimon', 'Thundermon', 'Shootmon']
+2025-08-18 17:41:02.396 | INFO     | app.main_window:setup_callbacks:195 - Callbacks configured
+2025-08-18 17:41:02.397 | INFO     | backend.vpet_engine:start_animation:296 - VPet animation started
+2025-08-18 17:41:02.397 | INFO     | app.main_window:start_engines:205 - Engines started
+2025-08-18 17:41:02.397 | INFO     | app.main_window:__init__:88 - Main application initialized
+2025-08-18 17:41:02.397 | INFO     | app.main_window:run:465 - Starting application
+2025-08-18 17:41:05.763 | INFO     | backend.time_logger:start_work_session:74 - Work session started at 2025-08-18T17:41:05.763823 with Agumon
+2025-08-18 17:41:05.765 | INFO     | backend.pomodoro_engine:start:115 - Timer started: work mode, 1500s remaining
+2025-08-18 17:41:05.765 | INFO     | backend.vpet_engine:set_timer_running:329 - VPet notified: timer running = True
+2025-08-18 17:41:07.939 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 17:41:11.567 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:41:20.644 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 17:41:21.852 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:41:23.668 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 10 cycles (20 frames)
+2025-08-18 17:41:29.842 | INFO     | backend.time_logger:stop_work_session:112 - Work session stopped (interrupted): 0.4 minutes
+2025-08-18 17:41:29.842 | INFO     | backend.time_logger:pause_work_session:129 - Work session paused
+2025-08-18 17:41:29.842 | INFO     | backend.pomodoro_engine:pause:135 - Timer paused: 1476s remaining
+2025-08-18 17:41:29.843 | INFO     | backend.vpet_engine:set_timer_running:329 - VPet notified: timer running = False
+2025-08-18 17:41:41.812 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:41:41.813 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 17:41:45.440 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:41:52.692 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 17:41:53.901 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:41:56.041 | INFO     | backend.time_logger:start_work_session:74 - Work session started at 2025-08-18T17:41:56.041433 with Agumon
+2025-08-18 17:41:56.042 | INFO     | backend.pomodoro_engine:start:115 - Timer started: work mode, 1476s remaining
+2025-08-18 17:41:56.043 | INFO     | backend.vpet_engine:set_timer_running:329 - VPet notified: timer running = True
+2025-08-18 17:41:57.831 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:42:00.250 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:42:02.367 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 17:42:05.995 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:42:09.120 | INFO     | backend.time_logger:stop_work_session:112 - Work session stopped (interrupted): 0.22 minutes
+2025-08-18 17:42:09.121 | INFO     | backend.time_logger:pause_work_session:129 - Work session paused
+2025-08-18 17:42:09.121 | INFO     | backend.pomodoro_engine:pause:135 - Timer paused: 1463s remaining
+2025-08-18 17:42:09.122 | INFO     | backend.vpet_engine:set_timer_running:329 - VPet notified: timer running = False
+2025-08-18 17:42:14.422 | INFO     | backend.time_logger:start_work_session:74 - Work session started at 2025-08-18T17:42:14.422068 with Agumon
+2025-08-18 17:42:14.422 | INFO     | backend.pomodoro_engine:start:115 - Timer started: work mode, 1463s remaining
+2025-08-18 17:42:14.423 | INFO     | backend.vpet_engine:set_timer_running:329 - VPet notified: timer running = True
+2025-08-18 17:42:17.985 | INFO     | backend.time_logger:stop_work_session:112 - Work session stopped (interrupted): 0.06 minutes
+2025-08-18 17:42:17.985 | INFO     | backend.time_logger:pause_work_session:129 - Work session paused
+2025-08-18 17:42:17.985 | INFO     | backend.pomodoro_engine:pause:135 - Timer paused: 1460s remaining
+2025-08-18 17:42:17.986 | INFO     | backend.vpet_engine:set_timer_running:329 - VPet notified: timer running = False
+2025-08-18 17:42:21.592 | INFO     | backend.time_logger:start_work_session:74 - Work session started at 2025-08-18T17:42:21.592170 with Agumon
+2025-08-18 17:42:21.593 | INFO     | backend.pomodoro_engine:start:115 - Timer started: work mode, 1460s remaining
+2025-08-18 17:42:21.593 | INFO     | backend.vpet_engine:set_timer_running:329 - VPet notified: timer running = True
+2025-08-18 17:42:26.558 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 7 cycles (14 frames)
+2025-08-18 17:42:31.685 | INFO     | app.main_window:_on_exit_clicked:333 - Exit button clicked - shutting down application
+2025-08-18 17:42:31.685 | INFO     | backend.time_logger:cleanup_on_exit:293 - Application exiting with active work session - stopping session
+2025-08-18 17:42:31.687 | INFO     | backend.time_logger:stop_work_session:112 - Work session stopped (interrupted): 0.17 minutes
+2025-08-18 17:42:31.687 | INFO     | backend.vpet_engine:stop_animation:302 - VPet animation stopped
+2025-08-18 17:42:31.688 | INFO     | app.main_window:cleanup:485 - Application cleanup completed
+2025-08-18 17:42:31.730 | INFO     | backend.vpet_engine:stop_animation:302 - VPet animation stopped
+2025-08-18 17:42:31.731 | INFO     | app.main_window:cleanup:485 - Application cleanup completed
+2025-08-18 17:42:45.284 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/0.png
+2025-08-18 17:42:45.284 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/1.png
+2025-08-18 17:42:45.284 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/3.png
+2025-08-18 17:42:45.285 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/6.png
+2025-08-18 17:42:45.285 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/7.png
+2025-08-18 17:42:45.286 | INFO     | backend.vpet_engine:_load_sprites_with_pil:214 - Loaded sprite: sprites/Agumon_penc/11.png
+2025-08-18 17:42:45.286 | INFO     | backend.vpet_engine:_load_projectile_sprite:271 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:42:45.286 | INFO     | backend.vpet_engine:_load_projectile_sprite:271 - Loaded projectile sprite: sprites/attacks/fireball_20x18.png
+2025-08-18 17:42:45.287 | INFO     | app.main_window:_extract_vpet_name_from_engine:107 - Extracted vpet name: Agumon
+2025-08-18 17:42:45.287 | INFO     | backend.time_logger:_load_sessions:309 - Loaded 20 existing sessions from data/work_sessions.json
+2025-08-18 17:42:45.287 | INFO     | backend.time_logger:__init__:47 - TimeLogger initialized with log file: data/work_sessions.json
+2025-08-18 17:42:45.389 | INFO     | app.main_window:create_gui_components:164 - GUI components created
+2025-08-18 17:42:45.390 | INFO     | app.main_window:_update_digimon_list:398 - Updated Digimon list: ['Agumon', 'Mokumon', 'DemiMeramon', 'Ghostmon', 'Wizardmon', 'Baalmon', 'Beelzemon (2010 Anime Version)', 'Bommon', 'Hagurumon', 'Missimon', 'Thundermon', 'Shootmon']
+2025-08-18 17:42:45.390 | INFO     | app.main_window:setup_callbacks:195 - Callbacks configured
+2025-08-18 17:42:45.390 | INFO     | backend.vpet_engine:start_animation:296 - VPet animation started
+2025-08-18 17:42:45.391 | INFO     | app.main_window:start_engines:205 - Engines started
+2025-08-18 17:42:45.391 | INFO     | app.main_window:__init__:88 - Main application initialized
+2025-08-18 17:42:45.391 | INFO     | app.main_window:run:465 - Starting application
+2025-08-18 17:42:46.863 | INFO     | backend.time_logger:start_work_session:74 - Work session started at 2025-08-18T17:42:46.863343 with Agumon
+2025-08-18 17:42:46.864 | INFO     | backend.pomodoro_engine:start:115 - Timer started: work mode, 1500s remaining
+2025-08-18 17:42:46.865 | INFO     | backend.vpet_engine:set_timer_running:329 - VPet notified: timer running = True
+2025-08-18 17:42:56.072 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 17:42:59.700 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:43:02.724 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 10 cycles (20 frames)
+2025-08-18 17:43:20.877 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:43:20.878 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 17:43:23.298 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:43:27.531 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 17:43:28.739 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:43:29.345 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 17:43:32.974 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:43:36.904 | INFO     | backend.pet_events:start:81 - Event 'attack' triggered for 9 cycles (18 frames)
+2025-08-18 17:43:53.226 | INFO     | backend.pet_events:complete:124 - Event 'attack' completed, chaining to 'happy'
+2025-08-18 17:43:53.227 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 17:43:54.435 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 17:43:56.549 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
