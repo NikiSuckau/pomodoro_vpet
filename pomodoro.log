@@ -6628,3 +6628,96 @@
 2025-08-16 18:59:21.540 | INFO     | main_app:cleanup:475 - Application cleanup completed
 2025-08-16 18:59:21.571 | INFO     | backend.vpet_engine:stop_animation:251 - VPet animation stopped
 2025-08-16 18:59:21.571 | INFO     | main_app:cleanup:475 - Application cleanup completed
+2025-08-18 16:04:35.401 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/0.png
+2025-08-18 16:04:35.401 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/1.png
+2025-08-18 16:04:35.402 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/3.png
+2025-08-18 16:04:35.402 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/6.png
+2025-08-18 16:04:35.402 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/7.png
+2025-08-18 16:04:35.403 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/11.png
+2025-08-18 16:04:35.403 | INFO     | app.main_window:_extract_vpet_name_from_engine:107 - Extracted vpet name: Agumon
+2025-08-18 16:04:35.403 | INFO     | backend.time_logger:_load_sessions:309 - Loaded 4 existing sessions from data/work_sessions.json
+2025-08-18 16:04:35.403 | INFO     | backend.time_logger:__init__:47 - TimeLogger initialized with log file: data/work_sessions.json
+2025-08-18 16:04:35.487 | INFO     | app.main_window:create_gui_components:164 - GUI components created
+2025-08-18 16:04:35.487 | INFO     | app.main_window:_update_digimon_list:388 - Updated Digimon list: ['Agumon', 'Mokumon', 'DemiMeramon', 'Ghostmon', 'Wizardmon', 'Baalmon', 'Beelzemon (2010 Anime Version)']
+2025-08-18 16:04:35.487 | INFO     | app.main_window:setup_callbacks:195 - Callbacks configured
+2025-08-18 16:04:35.488 | INFO     | backend.vpet_engine:start_animation:264 - VPet animation started
+2025-08-18 16:04:35.488 | INFO     | app.main_window:start_engines:205 - Engines started
+2025-08-18 16:04:35.488 | INFO     | app.main_window:__init__:88 - Main application initialized
+2025-08-18 16:04:35.488 | INFO     | app.main_window:run:455 - Starting application
+2025-08-18 16:04:47.295 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Mokumon_penc/0.png
+2025-08-18 16:04:47.297 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Mokumon_penc/1.png
+2025-08-18 16:04:47.299 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Mokumon_penc/3.png
+2025-08-18 16:04:47.301 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Mokumon_penc/6.png
+2025-08-18 16:04:47.303 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Mokumon_penc/7.png
+2025-08-18 16:04:47.305 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Mokumon_penc/11.png
+2025-08-18 16:04:47.307 | INFO     | backend.pomodoro_engine:set_vpet_name:276 - VPet name changed from Agumon to Mokumon
+2025-08-18 16:04:47.308 | INFO     | app.main_window:_on_digimon_changed:374 - Switched to Digimon: Mokumon
+2025-08-18 16:04:50.024 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:04:50.319 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/DemiMeramon_penc/0.png
+2025-08-18 16:04:50.321 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/DemiMeramon_penc/1.png
+2025-08-18 16:04:50.323 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/DemiMeramon_penc/3.png
+2025-08-18 16:04:50.326 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/DemiMeramon_penc/6.png
+2025-08-18 16:04:50.329 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/DemiMeramon_penc/7.png
+2025-08-18 16:04:50.331 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/DemiMeramon_penc/11.png
+2025-08-18 16:04:50.332 | INFO     | backend.pomodoro_engine:set_vpet_name:276 - VPet name changed from Mokumon to DemiMeramon
+2025-08-18 16:04:50.332 | INFO     | app.main_window:_on_digimon_changed:374 - Switched to Digimon: DemiMeramon
+2025-08-18 16:04:53.079 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Ghostmon_penc/0.png
+2025-08-18 16:04:53.081 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Ghostmon_penc/1.png
+2025-08-18 16:04:53.083 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Ghostmon_penc/3.png
+2025-08-18 16:04:53.086 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Ghostmon_penc/6.png
+2025-08-18 16:04:53.088 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Ghostmon_penc/7.png
+2025-08-18 16:04:53.090 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Ghostmon_penc/11.png
+2025-08-18 16:04:53.090 | INFO     | backend.pomodoro_engine:set_vpet_name:276 - VPet name changed from DemiMeramon to Ghostmon
+2025-08-18 16:04:53.091 | INFO     | app.main_window:_on_digimon_changed:374 - Switched to Digimon: Ghostmon
+2025-08-18 16:04:53.640 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:04:54.843 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 3 cycles (6 frames)
+2025-08-18 16:04:58.451 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:05:00.213 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Wizardmon_penc/0.png
+2025-08-18 16:05:00.215 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Wizardmon_penc/1.png
+2025-08-18 16:05:00.218 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Wizardmon_penc/3.png
+2025-08-18 16:05:00.220 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Wizardmon_penc/6.png
+2025-08-18 16:05:00.224 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Wizardmon_penc/7.png
+2025-08-18 16:05:00.226 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Wizardmon_penc/11.png
+2025-08-18 16:05:00.228 | INFO     | backend.pomodoro_engine:set_vpet_name:276 - VPet name changed from Ghostmon to Wizardmon
+2025-08-18 16:05:00.229 | INFO     | app.main_window:_on_digimon_changed:374 - Switched to Digimon: Wizardmon
+2025-08-18 16:05:02.361 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 1 cycles (2 frames)
+2025-08-18 16:05:02.787 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Baalmon_penc/0.png
+2025-08-18 16:05:02.789 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Baalmon_penc/1.png
+2025-08-18 16:05:02.791 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Baalmon_penc/3.png
+2025-08-18 16:05:02.796 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Baalmon_penc/6.png
+2025-08-18 16:05:02.798 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Baalmon_penc/7.png
+2025-08-18 16:05:02.800 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Baalmon_penc/11.png
+2025-08-18 16:05:02.800 | INFO     | backend.pomodoro_engine:set_vpet_name:276 - VPet name changed from Wizardmon to Baalmon
+2025-08-18 16:05:02.801 | INFO     | app.main_window:_on_digimon_changed:374 - Switched to Digimon: Baalmon
+2025-08-18 16:05:03.564 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:05:05.528 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Beelzemon (2010 Anime Version)_penc/0.png
+2025-08-18 16:05:05.531 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Beelzemon (2010 Anime Version)_penc/1.png
+2025-08-18 16:05:05.534 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Beelzemon (2010 Anime Version)_penc/3.png
+2025-08-18 16:05:05.537 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Beelzemon (2010 Anime Version)_penc/6.png
+2025-08-18 16:05:05.539 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Beelzemon (2010 Anime Version)_penc/7.png
+2025-08-18 16:05:05.542 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Beelzemon (2010 Anime Version)_penc/11.png
+2025-08-18 16:05:05.543 | INFO     | backend.pomodoro_engine:set_vpet_name:276 - VPet name changed from Baalmon to Beelzemon (2010 Anime Version)
+2025-08-18 16:05:05.543 | INFO     | app.main_window:_on_digimon_changed:374 - Switched to Digimon: Beelzemon (2010 Anime Version)
+2025-08-18 16:05:07.567 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Mokumon_penc/0.png
+2025-08-18 16:05:07.569 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Mokumon_penc/1.png
+2025-08-18 16:05:07.570 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Mokumon_penc/3.png
+2025-08-18 16:05:07.572 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Mokumon_penc/6.png
+2025-08-18 16:05:07.574 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Mokumon_penc/7.png
+2025-08-18 16:05:07.576 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Mokumon_penc/11.png
+2025-08-18 16:05:07.577 | INFO     | backend.pomodoro_engine:set_vpet_name:276 - VPet name changed from Beelzemon (2010 Anime Version) to Mokumon
+2025-08-18 16:05:07.577 | INFO     | app.main_window:_on_digimon_changed:374 - Switched to Digimon: Mokumon
+2025-08-18 16:05:09.350 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/0.png
+2025-08-18 16:05:09.352 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/1.png
+2025-08-18 16:05:09.353 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/3.png
+2025-08-18 16:05:09.354 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/6.png
+2025-08-18 16:05:09.356 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/7.png
+2025-08-18 16:05:09.358 | INFO     | backend.vpet_engine:_load_sprites_with_pil:208 - Loaded sprite: sprites/Agumon_penc/11.png
+2025-08-18 16:05:09.358 | INFO     | backend.pomodoro_engine:set_vpet_name:276 - VPet name changed from Mokumon to Agumon
+2025-08-18 16:05:09.359 | INFO     | app.main_window:_on_digimon_changed:374 - Switched to Digimon: Agumon
+2025-08-18 16:05:21.613 | INFO     | backend.pet_events:start:81 - Event 'happy' triggered for 2 cycles (4 frames)
+2025-08-18 16:05:24.021 | INFO     | backend.pet_events:complete:128 - Event 'happy' completed
+2025-08-18 16:05:31.239 | INFO     | app.main_window:_on_exit_clicked:323 - Exit button clicked - shutting down application
+2025-08-18 16:05:31.240 | INFO     | backend.vpet_engine:stop_animation:270 - VPet animation stopped
+2025-08-18 16:05:31.241 | INFO     | app.main_window:cleanup:475 - Application cleanup completed
+2025-08-18 16:05:31.297 | INFO     | backend.vpet_engine:stop_animation:270 - VPet animation stopped
+2025-08-18 16:05:31.297 | INFO     | app.main_window:cleanup:475 - Application cleanup completed
