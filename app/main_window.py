@@ -466,6 +466,7 @@ class MainWindow:
 
     def _queue_event(self, name: str) -> None:
         """Queue an event in the VPet engine."""
+        logger.debug(f"Event '{name}' queued")
         self.vpet_engine.queue_event(name)
 
     def _on_events_window_closed(self) -> None:
