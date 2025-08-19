@@ -344,7 +344,7 @@ class MainWindow:
 
     def _on_import_clicked(self) -> None:
         """Handle import button click from Pomodoro GUI."""
-        from tkinter import filedialog, messagebox, Toplevel
+        from tkinter import Toplevel, filedialog, messagebox
 
         # Create a hidden dummy window just below the main window to act as parent
         self.root.update_idletasks()
