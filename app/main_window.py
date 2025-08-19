@@ -78,6 +78,7 @@ class MainWindow:
         # GUI components (will be initialized in setup)
         self.pomodoro_gui: Optional[PomodoroGUI] = None
         self.vpet_gui: Optional[VPetGUI] = None
+        self.events_window: Optional[tk.Toplevel] = None
 
         # Setup everything
         self.setup_window()
@@ -178,6 +179,7 @@ class MainWindow:
                 on_start_pause=self._on_start_pause_clicked,
                 on_reset=self._on_reset_clicked,
                 on_exit=self._on_exit_clicked,
+                on_events=self._open_events_window,
             )
 
             # Set Digimon-related callbacks
@@ -419,6 +421,58 @@ class MainWindow:
             self.pomodoro_gui.update_digimon_list(digimon_names)
 
         logger.info(f"Updated Digimon list: {digimon_names}")
+
+    def _open_events_window(self) -> None:
+        """Open a window listing all available VPet events."""
+        if self.events_window and self.events_window.winfo_exists():
+            self.events_window.destroy()
+        self.events_window = tk.Toplevel(self.root)
+        self.events_window.title("Events")
+        self.events_window.protocol("WM_DELETE_WINDOW", self._on_events_window_closed)
+        self.events_window.lift()
+        self.events_window.attributes("-topmost", True)
+
+        try:
+            self.root.update_idletasks()
+            root_x = self.root.winfo_rootx()
+            root_y = self.root.winfo_rooty()
+            root_w = self.root.winfo_width()
+            root_h = self.root.winfo_height()
+            window_w = 140
+            button_h = 30
+            window_h = max(50, len(self.vpet_engine.events) * button_h + 20)
+            x = root_x + root_w + 10
+            y = root_y + (root_h - window_h) // 2
+            self.events_window.geometry(f"{window_w}x{window_h}+{x}+{y}")
+        except Exception:
+            pass
+
+        frame = tk.Frame(self.events_window, bg=self.transparent_color)
+        frame.pack(padx=10, pady=10, fill="both", expand=True)
+
+        for name in sorted(self.vpet_engine.events.keys()):
+            btn = tk.Button(
+                frame,
+                text=name,
+                command=lambda n=name: self._queue_event(n),
+                font=("Arial", 8),
+                bg="#95a5a6",
+                fg="#2c3e50",
+                relief="flat",
+                activebackground="#7f8c8d",
+                activeforeground="#2c3e50",
+            )
+            btn.pack(fill="x", pady=2)
+
+    def _queue_event(self, name: str) -> None:
+        """Queue an event in the VPet engine."""
+        self.vpet_engine.queue_event(name)
+
+    def _on_events_window_closed(self) -> None:
+        """Handle closing of the events window."""
+        if self.events_window:
+            self.events_window.destroy()
+            self.events_window = None
 
     def _update_all_displays(self) -> None:
         """Update all display components with current state."""

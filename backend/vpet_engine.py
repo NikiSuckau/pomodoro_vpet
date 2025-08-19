@@ -80,6 +80,7 @@ class VPetEngine:
         # Registered animation events
         self.events: Dict[str, PetEvent] = {}
         self.active_event: Optional[PetEvent] = None
+        self.event_queue: list[str] = []
 
         # Register default events (attack training and happy celebration)
         self._register_default_events()
@@ -138,6 +139,16 @@ class VPetEngine:
         if event is not None:
             event.start(self)
             self.active_event = event
+
+    def queue_event(self, name: str) -> None:
+        """Queue an event by name to play after the current event."""
+        if name not in self.events:
+            logger.warning(f"Unknown event queued: {name}")
+            return
+        if self.active_event is None:
+            self._activate_event(name)
+        else:
+            self.event_queue.append(name)
 
     def _register_default_events(self) -> None:
         """Register built-in events used by the engine."""
@@ -469,6 +480,10 @@ class VPetEngine:
                     self.active_event = None
                     if next_event:
                         self._activate_event(next_event)
+                    elif self.event_queue:
+                        self._activate_event(self.event_queue.pop(0))
+            elif self.event_queue:
+                self._activate_event(self.event_queue.pop(0))
             else:
                 # Normal walking behaviour
                 old_position = self.x_position

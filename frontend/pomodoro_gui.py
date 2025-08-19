@@ -37,6 +37,7 @@ class PomodoroGUI:
         self.on_exit_callback: Optional[Callable[[], None]] = None
         self.on_import_callback: Optional[Callable[[], None]] = None
         self.on_digimon_change_callback: Optional[Callable[[str], None]] = None
+        self.on_events_callback: Optional[Callable[[], None]] = None
 
         # GUI elements
         self.mode_label: Optional[tk.Label] = None
@@ -65,6 +66,7 @@ class PomodoroGUI:
         on_start_pause: Optional[Callable[[], None]] = None,
         on_reset: Optional[Callable[[], None]] = None,
         on_exit: Optional[Callable[[], None]] = None,
+        on_events: Optional[Callable[[], None]] = None,
     ):
         """
         Set callback functions for user interactions.
@@ -73,10 +75,12 @@ class PomodoroGUI:
             on_start_pause: Called when start/pause button is clicked
             on_reset: Called when reset button is clicked
             on_exit: Called when exit button is clicked
+            on_events: Called when events button is clicked
         """
         self.on_start_pause_callback = on_start_pause
         self.on_reset_callback = on_reset
         self.on_exit_callback = on_exit
+        self.on_events_callback = on_events
 
     def create_widgets(self) -> None:
         """Create the GUI elements for the Pomodoro timer."""
@@ -181,6 +185,7 @@ class PomodoroGUI:
         self.events_btn = tk.Button(
             config_frame,
             text="Events",
+            command=self._on_events_clicked,
             font=("Arial", 9),
             bg="#95a5a6",
             fg="#2c3e50",
@@ -385,6 +390,11 @@ class PomodoroGUI:
         """Handle exit button click."""
         if self.on_exit_callback:
             self.on_exit_callback()
+
+    def _on_events_clicked(self) -> None:
+        """Handle events button click."""
+        if self.on_events_callback:
+            self.on_events_callback()
 
     def _on_import_clicked(self) -> None:
         """Handle import button click."""
