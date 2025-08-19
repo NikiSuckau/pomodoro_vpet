@@ -433,17 +433,22 @@ class MainWindow:
         self.events_window.attributes("-topmost", True)
 
         try:
-            self.root.update_idletasks()
-            root_x = self.root.winfo_rootx()
-            root_y = self.root.winfo_rooty()
-            root_w = self.root.winfo_width()
-            root_h = self.root.winfo_height()
-            window_w = 140
-            button_h = 30
-            window_h = max(50, len(self.vpet_engine.events) * button_h + 20)
-            x = root_x + root_w + 10
-            y = root_y + (root_h - window_h) // 2
-            self.events_window.geometry(f"{window_w}x{window_h}+{x}+{y}")
+            # Find root window
+            # root = self.parent_frame.winfo_toplevel()
+            root = self.root
+            root.update_idletasks()
+            root_x = root.winfo_rootx()
+            root_y = root.winfo_rooty()
+            root_w = root.winfo_width()
+            root_h = root.winfo_height()
+            # Place config window to the left of the main window, vertically centered
+            config_w = 200
+            config_h = 80
+            x = root_x - config_w - 10
+            y = root_y + (root_h - config_h) // 2
+            if x < 0:
+                x = 0  # Prevent the config window from being off-screen to the left
+            self.events_window.geometry(f"{config_w}x{config_h}+{x}+{y}")
         except Exception:
             pass
 
