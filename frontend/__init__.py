@@ -1,2 +1,1 @@
-# Frontend module for Pomodoro VPet application
-
+"""Pygame frontend utilities for the Pomodoro VPet."""

@@ -1,43 +1,30 @@
 # Pomodoro VPet Timer
 
-A unique Pomodoro timer application with an integrated virtual pet (VPet) companion! Written in Python using tkinter, this timer combines productivity tracking with the nostalgic fun of caring for a digital pet. Inspired by classic Digimon virtual pets, your Agumon companion will train alongside you during work sessions.
+A Pomodoro timer application with an integrated virtual pet companion.  The
+interface is implemented with **pygame**, providing a lightweight window that
+shows the timer and a small animated Digimon.
 
 ## Features
 
-- **Always on top**: The timer window stays visible above all other applications
-- **Compact design**: Small 250x200 pixel window positioned in the top-right corner
-- **Classic Pomodoro Technique**: 25-minute work sessions followed by 5-minute breaks
-- **Visual feedback**: Different colors for work time (red) and break time (green)
-- **Window flashing**: Gets your attention when a session ends
-- **Simple controls**: Start/Pause/Resume and Reset buttons
-- **Virtual Pet Companion**: Agumon walking animation below the timer
-- **Adaptive VPet Behavior**: Pet moves faster during work sessions (training) and slower during breaks (relaxing)
-- **Classic Digimon Sprites**: Authentic Agumon sprites for nostalgic virtual pet experience
-- **Object-Oriented Architecture**: Clean separation between backend logic and frontend GUI components
+- Classic Pomodoro technique with 25 minute work sessions and 5 minute breaks
+- Simple keyboard controls
+- Animated Agumon sprite walking along the bottom of the window
+- Object-oriented design separating backend logic from pygame rendering
 
 ## Architecture
 
-The application follows object-oriented principles with clear separation of concerns:
-
 ```
-├── app/                    # Application controller package
-│   └── main_window.py      # Coordinates backend and frontend components
+├── app/                    # Application controller
+│   └── main_window.py      # Pygame based main window
 ├── backend/                # Business logic layer
 │   ├── pomodoro_engine.py  # Core timer logic and state management
 │   ├── time_logger.py      # Work session tracking
-│   └── vpet_engine.py      # VPet behavior and sprite management
-├── frontend/               # GUI layer
-│   ├── pomodoro_gui.py     # Timer display and controls
-│   └── vpet_gui.py         # VPet canvas and rendering
+│   └── vpet_engine.py      # (unused in pygame version) advanced pet logic
+├── frontend/               # Pygame rendering helpers
+│   └── pygame_gui.py       # Timer and virtual pet drawing
 ├── pomodoro_vpet.py        # Main entry point
 └── tests/                  # Automated tests
 ```
-
-### Component Responsibilities
-
-- **Backend Engines**: Handle all business logic, state management, and data processing
-- **Frontend GUIs**: Manage display, user interactions, and visual presentation
-- **Main Controller**: Coordinates between backend and frontend, handles application lifecycle
 
 ## Requirements
 
@@ -67,29 +54,15 @@ python pomodoro_vpet.py
 
 ### Controls
 
-- **Start**: Begin the timer
-- **Pause**: Pause the current session
-- **Resume**: Continue a paused session
-- **Reset**: Reset to the beginning of a work session
+- **Space**: start/pause/resume the timer
+- **R**: reset to the beginning of a work session
+- **Esc** or window close: exit the application
 
 ### Timer Behavior
 
-1. Starts with a 25-minute work session
-2. When work time ends, automatically switches to a 5-minute break
-3. When break time ends, switches back to work time
-4. The window will flash yellow briefly when a session ends to get your attention
-5. Colors indicate the current mode:
-   - Red text: Work time
-   - Green text: Break time
-
-## Customization
-
-You can easily modify the timer durations by editing these variables in `backend/pomodoro_engine.py`:
-
-```python
-self.work_duration = 25 * 60  # 25 minutes in seconds
-self.break_duration = 5 * 60  # 5 minutes in seconds
-```
+1. Starts with a 25‑minute work session
+2. When work time ends, automatically switches to a 5‑minute break
+3. Sessions continue alternating between work and break periods
 
 ## Testing
 
@@ -102,4 +75,3 @@ pytest
 ## License
 
 This project is open source and available under the MIT License.
-
