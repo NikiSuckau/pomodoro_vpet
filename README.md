@@ -7,7 +7,7 @@ shows the timer and a small animated Digimon.
 ## Features
 
 - Classic Pomodoro technique with 25 minute work sessions and 5 minute breaks
-- Simple keyboard controls
+- On-screen buttons for starting/pausing, resetting, and toggling the pet
 - Animated Agumon sprite walking along the bottom of the window
 - Object-oriented design separating backend logic from pygame rendering
 
@@ -54,8 +54,11 @@ python pomodoro_vpet.py
 
 ### Controls
 
-- **Space**: start/pause/resume the timer
-- **R**: reset to the beginning of a work session
+Use either the buttons or keyboard shortcuts:
+
+- **Start/Pause** button or **Space** key: start, pause, or resume the timer
+- **Reset** button or **R** key: reset to the beginning of a work session
+- **Pet On/Off** toggle: show or hide the virtual pet
 - **Esc** or window close: exit the application
 
 ### Timer Behavior

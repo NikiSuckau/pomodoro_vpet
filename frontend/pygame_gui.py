@@ -1,5 +1,5 @@
 import os
-from typing import Tuple
+from typing import Callable, Tuple
 
 import pygame
 
@@ -26,6 +26,68 @@ class TimerDisplay:
         time_rect = time_surf.get_rect(center=self.center)
         surface.blit(mode_surf, mode_rect)
         surface.blit(time_surf, time_rect)
+
+
+class Button:
+    """Simple rectangular button with text."""
+
+    def __init__(
+        self,
+        rect: pygame.Rect,
+        text: str,
+        font: pygame.font.Font,
+        callback: Callable[[], None],
+        *,
+        bg_color: Tuple[int, int, int] = (78, 205, 196),
+        fg_color: Tuple[int, int, int] = (44, 62, 80),
+    ) -> None:
+        self.rect = rect
+        self.text = text
+        self.font = font
+        self.callback = callback
+        self.bg_color = bg_color
+        self.fg_color = fg_color
+
+    def set_text(self, text: str) -> None:
+        self.text = text
+
+    def handle_event(self, event: pygame.event.Event) -> None:
+        if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+            if self.rect.collidepoint(event.pos):
+                self.callback()
+
+    def draw(self, surface: pygame.Surface) -> None:
+        pygame.draw.rect(surface, self.bg_color, self.rect)
+        text_surf = self.font.render(self.text, True, self.fg_color)
+        text_rect = text_surf.get_rect(center=self.rect.center)
+        surface.blit(text_surf, text_rect)
+
+
+class ToggleButton(Button):
+    """Button that toggles between two states."""
+
+    def __init__(
+        self,
+        rect: pygame.Rect,
+        text_on: str,
+        text_off: str,
+        font: pygame.font.Font,
+        callback: Callable[[bool], None],
+        *,
+        initial_state: bool = True,
+        bg_color: Tuple[int, int, int] = (149, 165, 166),
+        fg_color: Tuple[int, int, int] = (44, 62, 80),
+    ) -> None:
+        super().__init__(rect, text_on if initial_state else text_off, font, self._toggle, bg_color=bg_color, fg_color=fg_color)
+        self.text_on = text_on
+        self.text_off = text_off
+        self.state = initial_state
+        self._user_callback = callback
+
+    def _toggle(self) -> None:
+        self.state = not self.state
+        self.set_text(self.text_on if self.state else self.text_off)
+        self._user_callback(self.state)
 
 
 class VPet:
@@ -56,6 +118,6 @@ class VPet:
 
     def draw(self, surface: pygame.Surface) -> None:
         frame = self.frames[self.index]
-        if self.direction < 0:
+        if self.direction > 0:
             frame = pygame.transform.flip(frame, True, False)
         surface.blit(frame, (self.x, self.y))
