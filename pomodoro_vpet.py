@@ -1,14 +1,13 @@
-"""
-Pomodoro VPet Application
+"""Entry point for the Pygame based Pomodoro VPet application."""
 
-A Pomodoro timer with an animated virtual pet (Agumon) that reacts to your work sessions.
-This is the main entry point that uses the refactored object-oriented structure.
-"""
+from app.pygame_app import PomodoroApp
 
-from app.main_window import MainWindow
+
+def main() -> None:
+    app = PomodoroApp()
+    app.run()
+
 
 if __name__ == "__main__":
-    # Create and run the application
-    app = MainWindow()
-    app.run()
+    main()
 

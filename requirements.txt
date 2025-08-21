@@ -1,3 +1,4 @@
 # Minimal dependencies for Pomodoro VPet Timer
 Pillow>=9.0.0  # Image manipulation for VPet sprites (optional)
+pygame>=2.0.0  # Pygame for GUI and sprite rendering
 pytest>=7.0.0  # Testing framework

@@ -1,6 +1,6 @@
 # Pomodoro VPet Timer
 
-A unique Pomodoro timer application with an integrated virtual pet (VPet) companion! Written in Python using tkinter, this timer combines productivity tracking with the nostalgic fun of caring for a digital pet. Inspired by classic Digimon virtual pets, your Agumon companion will train alongside you during work sessions.
+A unique Pomodoro timer application with an integrated virtual pet (VPet) companion! The revamped version uses **pygame** for its interface and keeps the core logic in clean, testable classes. Inspired by classic Digimon virtual pets, your Agumon companion will train alongside you during work sessions.
 
 ## Features
 
@@ -21,14 +21,13 @@ The application follows object-oriented principles with clear separation of conc
 
 ```
 ├── app/                    # Application controller package
-│   └── main_window.py      # Coordinates backend and frontend components
+│   └── pygame_app.py       # Pygame event loop and coordination
 ├── backend/                # Business logic layer
 │   ├── pomodoro_engine.py  # Core timer logic and state management
 │   ├── time_logger.py      # Work session tracking
-│   └── vpet_engine.py      # VPet behavior and sprite management
-├── frontend/               # GUI layer
-│   ├── pomodoro_gui.py     # Timer display and controls
-│   └── vpet_gui.py         # VPet canvas and rendering
+│   └── vpet_engine.py      # VPet behaviour and sprite management
+├── frontend/               # GUI layer built with pygame
+│   └── pygame_gui.py       # Timer display, buttons and pet rendering
 ├── pomodoro_vpet.py        # Main entry point
 └── tests/                  # Automated tests
 ```
