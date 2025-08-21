@@ -529,23 +529,33 @@ class VPetEngine:
                 if (
                     callback is not None
                     and callable(callback)
-                    and root is not None
-                    and hasattr(root, "after")
-                    and callable(getattr(root, "after", None))
                 ):
                     projectiles_snapshot = [p.copy() for p in self.projectiles]
 
-                    def _cb(
-                        x=self.x_position,
-                        y=y_position,
-                        frame=self.current_frame,
-                        key=sprite_key,
-                        projs=projectiles_snapshot,
-                        cb=callback,
-                    ) -> None:
-                        cb(x, y, frame, key, projs)  # type: ignore[operator]
+                    if (
+                        root is not None
+                        and hasattr(root, "after")
+                        and callable(getattr(root, "after", None))
+                    ):
+                        def _cb(
+                            x=self.x_position,
+                            y=y_position,
+                            frame=self.current_frame,
+                            key=sprite_key,
+                            projs=projectiles_snapshot,
+                            cb=callback,
+                        ) -> None:
+                            cb(x, y, frame, key, projs)  # type: ignore[operator]
 
-                    root.after(0, _cb)
+                        root.after(0, _cb)
+                    else:
+                        callback(
+                            self.x_position,
+                            y_position,
+                            self.current_frame,
+                            sprite_key,
+                            projectiles_snapshot,
+                        )
 
                 time.sleep(step_delay)
 
