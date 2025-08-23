@@ -5,10 +5,10 @@ A Pomodoro timer with an animated virtual pet (Agumon) that reacts to your work 
 This is the main entry point that uses the refactored object-oriented structure.
 """
 
-from app.main_window import MainWindow
+from app.pygame_app import PygameApp
 
 if __name__ == "__main__":
-    # Create and run the application
-    app = MainWindow()
+    # Create and run the pygame based application
+    app = PygameApp()
     app.run()
 
