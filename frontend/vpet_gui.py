@@ -41,6 +41,10 @@ class VPetGUI:
         self.parent_frame = parent_frame
         self.canvas_width = canvas_width
         self.canvas_height = canvas_height
+        self.base_canvas_width = canvas_width
+        self.base_canvas_height = canvas_height
+        self.scale = 1
+        self.on_scale_change: Optional[Callable[[int, int, int], None]] = None
 
         # GUI elements
         self.vpet_frame: Optional[tk.Frame] = None
@@ -72,6 +76,50 @@ class VPetGUI:
         )
         self.vpet_canvas.pack(padx=5, pady=5)
 
+        control_frame = tk.Frame(self.vpet_frame, bg="#2c3e50")
+        control_frame.pack(pady=(0, 5))
+        minus_btn = tk.Button(
+            control_frame,
+            text="-",
+            command=lambda: self.change_scale(-1),
+            width=2,
+            bg="#95a5a6",
+            fg="#2c3e50",
+            relief="flat",
+        )
+        minus_btn.pack(side="left", padx=5)
+        plus_btn = tk.Button(
+            control_frame,
+            text="+",
+            command=lambda: self.change_scale(1),
+            width=2,
+            bg="#95a5a6",
+            fg="#2c3e50",
+            relief="flat",
+        )
+        plus_btn.pack(side="left", padx=5)
+
+    def set_scale_callback(
+        self, callback: Optional[Callable[[int, int, int], None]]
+    ) -> None:
+        """Register a callback for scale changes."""
+        self.on_scale_change = callback
+
+    def change_scale(self, delta: int) -> None:
+        """Increase or decrease the display scale."""
+        new_scale = self.scale + delta
+        if new_scale < 1:
+            new_scale = 1
+        if new_scale == self.scale:
+            return
+        self.scale = new_scale
+        new_width = self.base_canvas_width * self.scale
+        new_height = self.base_canvas_height * self.scale
+        self.resize_canvas(new_width, new_height)
+        self.clear_sprite_cache()
+        if self.on_scale_change:
+            self.on_scale_change(self.scale, new_width, new_height)
+
     def load_sprite_for_display(self, sprite_data, sprite_key: str):
         """
         Load sprite data into a format suitable for tkinter display.
@@ -91,8 +139,16 @@ class VPetGUI:
             return self.tk_sprites[sprite_key]
 
         try:
-            if PIL_AVAILABLE and hasattr(sprite_data, "save"):
+            if PIL_AVAILABLE and hasattr(sprite_data, "resize"):
                 # PIL Image object
+                if self.scale != 1:
+                    sprite_data = sprite_data.resize(
+                        (
+                            int(sprite_data.width * self.scale),
+                            int(sprite_data.height * self.scale),
+                        ),
+                        Image.NEAREST,
+                    )
                 tk_image = ImageTk.PhotoImage(sprite_data)
                 self.tk_sprites[sprite_key] = tk_image
                 return tk_image
@@ -170,8 +226,8 @@ class VPetGUI:
         rect_color = "#e74c3c" if self.current_mode == "work" else "#27ae60"
 
         # Draw main body (rectangle)
-        body_width = 20
-        body_height = 20
+        body_width = 20 * self.scale
+        body_height = 20 * self.scale
         self.vpet_canvas.create_rectangle(
             x_position,
             y_position - body_height // 2,
@@ -183,7 +239,7 @@ class VPetGUI:
         )
 
         # Draw direction indicator (triangle)
-        triangle_size = 5
+        triangle_size = 5 * self.scale
         if (
             hasattr(self, "_last_direction") and self._last_direction == 1
         ):  # Moving right
@@ -208,20 +264,20 @@ class VPetGUI:
         self.vpet_canvas.create_polygon(points, fill="white", outline="white")
 
         # Draw eyes
-        eye_size = 2
-        eye_y = y_position - 5
+        eye_size = 2 * self.scale
+        eye_y = y_position - 5 * self.scale
         self.vpet_canvas.create_oval(
-            x_position + 5 - eye_size,
+            x_position + 5 * self.scale - eye_size,
             eye_y - eye_size,
-            x_position + 5 + eye_size,
+            x_position + 5 * self.scale + eye_size,
             eye_y + eye_size,
             fill="white",
             outline="white",
         )
         self.vpet_canvas.create_oval(
-            x_position + 15 - eye_size,
+            x_position + 15 * self.scale - eye_size,
             eye_y - eye_size,
-            x_position + 15 + eye_size,
+            x_position + 15 * self.scale + eye_size,
             eye_y + eye_size,
             fill="white",
             outline="white",

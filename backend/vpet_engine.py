@@ -67,10 +67,16 @@ class VPetEngine:
         self.sprite_width = 48
         self.sprite_height = 48
         self.margin = 12
+        # Base dimensions for scaling
+        self.base_sprite_width = self.sprite_width
+        self.base_sprite_height = self.sprite_height
+        self.base_projectile_width = 20
+        self.base_margin = self.margin
+        self.scale = 1
         # Projectile state
         self.projectiles: list[dict] = []
         self.projectile_speed = 12
-        self.projectile_width = 20
+        self.projectile_width = self.base_projectile_width
 
         # Walking animation frames (facing left by default)
         self.walk_frames = [0, 1]
@@ -433,6 +439,17 @@ class VPetEngine:
         self.canvas_height = height
 
         # Recalculate boundaries
+        self._ensure_within_boundaries()
+
+    def set_scale(self, scale: int) -> None:
+        """Adjust sprite and movement dimensions by a scaling factor."""
+        if not isinstance(scale, int) or scale < 1:
+            return
+        self.scale = scale
+        self.sprite_width = int(self.base_sprite_width * scale)
+        self.sprite_height = int(self.base_sprite_height * scale)
+        self.projectile_width = int(self.base_projectile_width * scale)
+        self.margin = int(self.base_margin * scale)
         self._ensure_within_boundaries()
 
     def set_random_walk_parameters(
