@@ -115,6 +115,8 @@ class MainWindow:
         """Configure the main window properties."""
         self.root.title("Pomodoro Timer")
         self.root.geometry("250x300")  # Increased height for vpet area
+        self.base_window_width = 250
+        self.base_window_height = 300
         self.root.resizable(False, False)
 
         # Make window always stay on top
@@ -161,6 +163,9 @@ class MainWindow:
         bottom_frame = tk.Frame(main_frame, bg=self.transparent_color)
         bottom_frame.pack(side="bottom", fill="x", expand=False)
         self.vpet_gui = VPetGUI(bottom_frame)
+        self.base_canvas_width, self.base_canvas_height = (
+            self.vpet_gui.get_canvas_size()
+        )
 
         logger.info("GUI components created")
 
@@ -193,6 +198,9 @@ class MainWindow:
 
         # VPet engine callbacks
         self.vpet_engine.set_callbacks(on_position_update=self._on_vpet_position_update)
+
+        if self.vpet_gui:
+            self.vpet_gui.set_scale_callback(self._on_vpet_scale_changed)
 
         logger.info("Callbacks configured")
 
@@ -293,6 +301,14 @@ class MainWindow:
             # Set direction hint for fallback rendering
             direction = self.vpet_engine.direction
             self.vpet_gui.set_direction_hint(direction)
+
+    def _on_vpet_scale_changed(self, scale: int, width: int, height: int) -> None:
+        """Handle scaling changes from the VPet GUI."""
+        self.vpet_engine.set_scale(scale)
+        self.vpet_engine.set_canvas_size(width, height)
+        new_w = self.base_window_width - self.base_canvas_width + width
+        new_h = self.base_window_height - self.base_canvas_height + height
+        self.root.geometry(f"{new_w}x{new_h}")
 
     def _on_start_pause_clicked(self) -> None:
         """Handle start/pause button click from Pomodoro GUI."""

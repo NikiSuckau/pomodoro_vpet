@@ -75,3 +75,11 @@ def test_queue_event_runs_after_current():
 
     assert engine.active_event is second
 
+
+def test_set_scale_updates_dimensions():
+    engine = VPetEngine()
+    engine.set_scale(2)
+    assert engine.sprite_width == engine.base_sprite_width * 2
+    assert engine.projectile_width == engine.base_projectile_width * 2
+    assert engine.margin == engine.base_margin * 2
+
