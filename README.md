@@ -13,6 +13,7 @@ A unique Pomodoro timer application with an integrated virtual pet (VPet) compan
 - **Virtual Pet Companion**: Agumon walking animation below the timer
 - **Adaptive VPet Behavior**: Pet moves faster during work sessions (training) and slower during breaks (relaxing)
 - **Classic Digimon Sprites**: Authentic Agumon sprites for nostalgic virtual pet experience
+- **Adjustable VPet Size**: Grow or shrink the pet with built-in +/- controls
 - **Object-Oriented Architecture**: Clean separation between backend logic and frontend GUI components
 
 ## Architecture
@@ -71,6 +72,7 @@ python pomodoro_vpet.py
 - **Pause**: Pause the current session
 - **Resume**: Continue a paused session
 - **Reset**: Reset to the beginning of a work session
+- **+/-**: Increase or decrease the virtual pet's size
 
 ### Timer Behavior
 

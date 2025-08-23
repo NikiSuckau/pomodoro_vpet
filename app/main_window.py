@@ -114,7 +114,9 @@ class MainWindow:
     def setup_window(self) -> None:
         """Configure the main window properties."""
         self.root.title("Pomodoro Timer")
-        self.root.geometry("250x300")  # Increased height for vpet area
+        self.base_width = 250
+        self.base_height = 300
+        self.root.geometry(f"{self.base_width}x{self.base_height}")  # Increased height for vpet area
         self.root.resizable(False, False)
 
         # Make window always stay on top
@@ -161,6 +163,7 @@ class MainWindow:
         bottom_frame = tk.Frame(main_frame, bg=self.transparent_color)
         bottom_frame.pack(side="bottom", fill="x", expand=False)
         self.vpet_gui = VPetGUI(bottom_frame)
+        self.vpet_gui.set_scale_callback(self._on_vpet_scale_change)
 
         logger.info("GUI components created")
 
@@ -252,6 +255,20 @@ class MainWindow:
         self._send_notifications(completed_mode)
 
         logger.info(f"Session completed: {completed_mode}")
+
+    def _on_vpet_scale_change(self, scale: float) -> None:
+        """Handle scale changes from the VPet GUI."""
+        self.vpet_engine.set_scale(scale)
+        canvas_width, canvas_height = self.vpet_gui.get_canvas_size()
+        self.vpet_engine.set_canvas_size(canvas_width, canvas_height)
+
+        # Adjust main window size to accommodate new canvas dimensions
+        new_width = self.base_width + (canvas_width - self.vpet_gui.base_canvas_width)
+        new_height = self.base_height + (canvas_height - self.vpet_gui.base_canvas_height)
+        self.root.geometry(f"{new_width}x{new_height}")
+
+        # Refresh displays with new sizing
+        self._update_all_displays()
 
     def _on_vpet_position_update(
         self, x: int, y: int, frame: int, sprite_key: str, projectiles: list

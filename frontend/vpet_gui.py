@@ -39,8 +39,12 @@ class VPetGUI:
             canvas_height: Height of the VPet canvas
         """
         self.parent_frame = parent_frame
+        self.base_canvas_width = canvas_width
+        self.base_canvas_height = canvas_height
         self.canvas_width = canvas_width
         self.canvas_height = canvas_height
+        self.scale = 1.0
+        self.scale_callback: Optional[Callable[[float], None]] = None
 
         # GUI elements
         self.vpet_frame: Optional[tk.Frame] = None
@@ -72,6 +76,16 @@ class VPetGUI:
         )
         self.vpet_canvas.pack(padx=5, pady=5)
 
+        # Scale controls
+        controls = tk.Frame(self.vpet_frame, bg="#2c3e50")
+        controls.pack(pady=(0, 5))
+        tk.Button(controls, text="-", width=2, command=self._decrease_scale).pack(
+            side="left", padx=2
+        )
+        tk.Button(controls, text="+", width=2, command=self._increase_scale).pack(
+            side="left", padx=2
+        )
+
     def load_sprite_for_display(self, sprite_data, sprite_key: str):
         """
         Load sprite data into a format suitable for tkinter display.
@@ -87,19 +101,40 @@ class VPetGUI:
             return None
 
         # Check if already cached
-        if sprite_key in self.tk_sprites:
-            return self.tk_sprites[sprite_key]
+        cache_key = f"{sprite_key}_{self.scale}"
+        if cache_key in self.tk_sprites:
+            return self.tk_sprites[cache_key]
 
         try:
-            if PIL_AVAILABLE and hasattr(sprite_data, "save"):
+            if PIL_AVAILABLE and hasattr(sprite_data, "size"):
                 # PIL Image object
+                w, h = sprite_data.size
+                if self.scale != 1.0:
+                    sprite_data = sprite_data.resize(
+                        (int(w * self.scale), int(h * self.scale)), Image.NEAREST
+                    )
                 tk_image = ImageTk.PhotoImage(sprite_data)
-                self.tk_sprites[sprite_key] = tk_image
+                self.tk_sprites[cache_key] = tk_image
                 return tk_image
             elif isinstance(sprite_data, str):
                 # File path
-                tk_image = tk.PhotoImage(file=sprite_data)
-                self.tk_sprites[sprite_key] = tk_image
+                if PIL_AVAILABLE:
+                    pil_img = Image.open(sprite_data)
+                    w, h = pil_img.size
+                    if self.scale != 1.0:
+                        pil_img = pil_img.resize(
+                            (int(w * self.scale), int(h * self.scale)), Image.NEAREST
+                        )
+                    tk_image = ImageTk.PhotoImage(pil_img)
+                else:
+                    tk_image = tk.PhotoImage(file=sprite_data)
+                    if self.scale != 1.0:
+                        try:
+                            tk_image = tk_image.zoom(int(self.scale * 100))
+                            tk_image = tk_image.subsample(100)
+                        except Exception:
+                            pass
+                self.tk_sprites[cache_key] = tk_image
                 return tk_image
             else:
                 # Unknown format
@@ -288,6 +323,31 @@ class VPetGUI:
 
         if self.vpet_canvas:
             self.vpet_canvas.config(width=width, height=height)
+
+    def set_scale_callback(self, callback: Callable[[float], None]) -> None:
+        """Register callback for scale changes."""
+        self.scale_callback = callback
+
+    def _increase_scale(self) -> None:
+        self.set_scale(self.scale + 0.25)
+
+    def _decrease_scale(self) -> None:
+        self.set_scale(self.scale - 0.25)
+
+    def set_scale(self, scale: float) -> None:
+        """Set a new scale for the VPet display."""
+        # Clamp scale between 0.5x and 2x
+        scale = max(0.5, min(2.0, scale))
+        if abs(scale - self.scale) < 1e-3:
+            return
+
+        self.scale = scale
+        new_width = int(self.base_canvas_width * scale)
+        new_height = int(self.base_canvas_height * scale)
+        self.resize_canvas(new_width, new_height)
+        self.clear_sprite_cache()
+        if self.scale_callback:
+            self.scale_callback(scale)
 
     def get_state(self) -> dict:
         """

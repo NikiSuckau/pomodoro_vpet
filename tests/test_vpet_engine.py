@@ -75,3 +75,14 @@ def test_queue_event_runs_after_current():
 
     assert engine.active_event is second
 
+
+def test_set_scale_updates_dimensions():
+    engine = VPetEngine()
+    engine.x_position = 200
+    engine.set_scale(1.5)
+    assert engine.sprite_width == int(engine.base_sprite_width * 1.5)
+    assert engine.margin == int(engine.base_margin * 1.5)
+    # Position should be clamped within new boundaries
+    right_boundary = engine.canvas_width - engine.sprite_width - engine.margin
+    assert engine.x_position <= right_boundary
+

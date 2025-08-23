@@ -64,13 +64,21 @@ class VPetEngine:
         self.direction = 1  # 1 for right, -1 for left
         self.canvas_width = 230
         self.canvas_height = 60
-        self.sprite_width = 48
-        self.sprite_height = 48
-        self.margin = 12
+
+        # Base sprite dimensions and scaling
+        self.scale = 1.0
+        self.base_sprite_width = 48
+        self.base_sprite_height = 48
+        self.sprite_width = self.base_sprite_width
+        self.sprite_height = self.base_sprite_height
+        self.base_margin = 12
+        self.margin = self.base_margin
+
         # Projectile state
         self.projectiles: list[dict] = []
         self.projectile_speed = 12
-        self.projectile_width = 20
+        self.base_projectile_width = 20
+        self.projectile_width = self.base_projectile_width
 
         # Walking animation frames (facing left by default)
         self.walk_frames = [0, 1]
@@ -433,6 +441,24 @@ class VPetEngine:
         self.canvas_height = height
 
         # Recalculate boundaries
+        self._ensure_within_boundaries()
+
+    def set_scale(self, scale: float) -> None:
+        """Adjust the sprite scaling factor.
+
+        Args:
+            scale: New scale multiplier where 1.0 is default size
+        """
+        if not isinstance(scale, (int, float)) or scale <= 0:
+            return
+
+        self.scale = scale
+        self.sprite_width = int(self.base_sprite_width * scale)
+        self.sprite_height = int(self.base_sprite_height * scale)
+        self.margin = int(self.base_margin * scale)
+        self.projectile_width = int(self.base_projectile_width * scale)
+
+        # Ensure current position remains valid within new bounds
         self._ensure_within_boundaries()
 
     def set_random_walk_parameters(
