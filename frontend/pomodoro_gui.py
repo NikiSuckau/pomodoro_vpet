@@ -196,6 +196,36 @@ class PomodoroGUI:
         )
         self.events_btn.pack(side="left", padx=(5, 0))
 
+        # VPet Size buttons (+/-) for dynamic scaling
+        size_frame = tk.Frame(self.parent_frame, bg=self.transparent_color)
+        size_frame.pack(pady=(8, 0))
+        self.increase_size_btn = tk.Button(
+            size_frame,
+            text="+",
+            font=("Arial", 9, "bold"),
+            bg="#b2ff66",
+            fg="#2c3e50",
+            relief="flat",
+            width=4,
+            activebackground="#8dd35f",
+            activeforeground="#2c3e50",
+            command=self._on_increase_size_clicked,
+        )
+        self.increase_size_btn.pack(side="left", padx=(0, 2))
+        self.decrease_size_btn = tk.Button(
+            size_frame,
+            text="-",
+            font=("Arial", 9, "bold"),
+            bg="#ffb366",
+            fg="#2c3e50",
+            relief="flat",
+            width=4,
+            activebackground="#e8913a",
+            activeforeground="#2c3e50",
+            command=self._on_decrease_size_clicked,
+        )
+        self.decrease_size_btn.pack(side="left", padx=(2, 0))
+
     def _open_config_window(self) -> None:
         """Open a configuration window for Digimon settings."""
         if self.config_window and self.config_window.winfo_exists():
@@ -432,6 +462,31 @@ class PomodoroGUI:
         current_selection = self.digimon_var.get()
         if current_selection not in digimon_list and digimon_list:
             self.digimon_var.set(digimon_list[0])
+
+    def set_size_callbacks(
+        self,
+        on_increase_size: Optional[Callable[[], None]] = None,
+        on_decrease_size: Optional[Callable[[], None]] = None,
+    ):
+        """
+        Set callback functions for VPet size controls (+ and - buttons).
+
+        Args:
+            on_increase_size: Called when the + button is clicked
+            on_decrease_size: Called when the - button is clicked
+        """
+        self.on_increase_size_callback = on_increase_size
+        self.on_decrease_size_callback = on_decrease_size
+
+    def _on_increase_size_clicked(self) -> None:
+        """Handle VPet size increase button click."""
+        if hasattr(self, 'on_increase_size_callback') and self.on_increase_size_callback:
+            self.on_increase_size_callback()
+
+    def _on_decrease_size_clicked(self) -> None:
+        """Handle VPet size decrease button click."""
+        if hasattr(self, 'on_decrease_size_callback') and self.on_decrease_size_callback:
+            self.on_decrease_size_callback()
 
     def set_digimon_callbacks(
         self,

@@ -182,6 +182,12 @@ class MainWindow:
                 on_events=self._open_events_window,
             )
 
+            # Set VPet size control callbacks
+            self.pomodoro_gui.set_size_callbacks(
+                on_increase_size=self._on_increase_vpet_size,
+                on_decrease_size=self._on_decrease_vpet_size,
+            )
+
             # Set Digimon-related callbacks
             self.pomodoro_gui.set_digimon_callbacks(
                 on_import=self._on_import_clicked,
@@ -411,6 +417,22 @@ class MainWindow:
             logger.warning(
                 f"Could not find sprite path for Digimon: {selected_digimon}"
             )
+
+    def _on_increase_vpet_size(self) -> None:
+        """Handle request to increase VPet display size."""
+        if self.vpet_gui:
+            current = self.vpet_gui.get_scale_factor()
+            new_scale = current + 0.25
+            self.vpet_gui.set_scale_factor(new_scale)
+            print(f"[DEBUG] Increased VPet scale: {current:.2f} -> {new_scale:.2f}")
+
+    def _on_decrease_vpet_size(self) -> None:
+        """Handle request to decrease VPet display size."""
+        if self.vpet_gui:
+            current = self.vpet_gui.get_scale_factor()
+            new_scale = current - 0.25
+            self.vpet_gui.set_scale_factor(new_scale)
+            print(f"[DEBUG] Decreased VPet scale: {current:.2f} -> {new_scale:.2f}")
 
     def _update_digimon_list(self) -> None:
         """Update the Digimon selector dropdown with available Digimon."""

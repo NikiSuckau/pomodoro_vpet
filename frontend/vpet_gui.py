@@ -28,7 +28,7 @@ class VPetGUI:
     """
 
     def __init__(
-        self, parent_frame: tk.Frame, canvas_width: int = 230, canvas_height: int = 60
+        self, parent_frame: tk.Frame, canvas_width: int = 230, canvas_height: int = 100
     ):
         """
         Initialize the VPet GUI component.
@@ -42,6 +42,9 @@ class VPetGUI:
         self.canvas_width = canvas_width
         self.canvas_height = canvas_height
 
+        # --- SCALE FACTOR for VPet display ---
+        self.scale_factor = 1.0
+
         # GUI elements
         self.vpet_frame: Optional[tk.Frame] = None
         self.vpet_canvas: Optional[tk.Canvas] = None
@@ -53,6 +56,24 @@ class VPetGUI:
         self.current_mode = "work"
 
         self.create_widgets()
+
+    def set_scale_factor(self, factor: float) -> None:
+        """
+        Set the display scale factor for the VPet.
+
+        Args:
+            factor: The scale factor (e.g., 1.0 = normal, 2.0 = double size)
+        """
+        if factor < 0.5:
+            factor = 0.5
+        elif factor > 3.0:
+            factor = 3.0
+        self.scale_factor = factor
+        self.clear_sprite_cache()
+
+    def get_scale_factor(self) -> float:
+        """Get the current VPet display scale factor."""
+        return self.scale_factor
 
     def create_widgets(self) -> None:
         """Create the GUI elements for the VPet display."""
@@ -87,19 +108,36 @@ class VPetGUI:
             return None
 
         # Check if already cached
-        if sprite_key in self.tk_sprites:
-            return self.tk_sprites[sprite_key]
+        cache_key = f"{sprite_key}_scale_{getattr(self, 'scale_factor', 1.0)}"
+        if cache_key in self.tk_sprites:
+            return self.tk_sprites[cache_key]
 
         try:
             if PIL_AVAILABLE and hasattr(sprite_data, "save"):
                 # PIL Image object
-                tk_image = ImageTk.PhotoImage(sprite_data)
-                self.tk_sprites[sprite_key] = tk_image
+                scale = getattr(self, 'scale_factor', 1.0)
+                if abs(scale - 1.0) > 0.01:
+                    width, height = sprite_data.size
+                    new_size = (int(width * scale), int(height * scale))
+                    resized_image = sprite_data.resize(new_size, Image.NEAREST if hasattr(Image, 'NEAREST') else 0)
+                else:
+                    resized_image = sprite_data
+                cache_key = f"{sprite_key}_scale_{scale}"
+                tk_image = ImageTk.PhotoImage(resized_image)
+                self.tk_sprites[cache_key] = tk_image
                 return tk_image
             elif isinstance(sprite_data, str):
                 # File path
                 tk_image = tk.PhotoImage(file=sprite_data)
-                self.tk_sprites[sprite_key] = tk_image
+                scale = self.scale_factor
+                if abs(scale - 1.0) > 0.01:
+                    try:
+                        tk_image = tk_image.zoom(int(scale * 100), int(scale * 100))
+                        tk_image = tk_image.subsample(100, 100)
+                    except Exception as e:
+                        print(f"Zoom failed: {e}")
+                cache_key = f"{sprite_key}_scale_{scale}"
+                self.tk_sprites[cache_key] = tk_image
                 return tk_image
             else:
                 # Unknown format
