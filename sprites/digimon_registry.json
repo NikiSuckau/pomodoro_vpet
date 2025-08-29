@@ -71,6 +71,24 @@
       "directory": "Shootmon_penc",
       "imported_date": "2025-08-18",
       "default": false
+    },
+    {
+      "name": "Shoemon",
+      "directory": "Shoemon_48",
+      "imported_date": "2025-08-18",
+      "default": false
+    },
+    {
+      "name": "Hyokomon",
+      "directory": "Hyokomon_48",
+      "imported_date": "2025-08-26",
+      "default": false
+    },
+    {
+      "name": "Gekkomon",
+      "directory": "Gekkomon_48",
+      "imported_date": "2025-08-29",
+      "default": false
     }
   ],
   "last_updated": "2025-08-18T16:46:56.099223",
