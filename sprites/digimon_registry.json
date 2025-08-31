@@ -89,8 +89,14 @@
       "directory": "Gekkomon_48",
       "imported_date": "2025-08-29",
       "default": false
+    },
+    {
+      "name": "Yolkmon_24",
+      "directory": "Yolkmon_24_penc",
+      "imported_date": "2025-08-31",
+      "default": false
     }
   ],
-  "last_updated": "2025-08-18T16:46:56.099223",
+  "last_updated": "2025-08-31T17:01:09.591677",
   "format_version": "1.0"
 }
